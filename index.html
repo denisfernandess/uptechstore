@@ -72,38 +72,30 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .add-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:18px;}
 .add-btn:hover{background:rgba(0,212,255,0.25);border-color:var(--cyan);}
 .empty{text-align:center;padding:60px 20px;color:var(--dim);}
-.empty-icon{font-size:48px;margin-bottom:16px;}
 
-/* CART PANEL */
+/* CART */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;display:none;backdrop-filter:blur(4px);}
 .cart-overlay.open{display:flex;justify-content:flex-end;}
-.cart-panel{background:var(--bg2);border-left:1px solid var(--border);width:100%;max-width:440px;height:100vh;display:flex;flex-direction:column;animation:slideIn .25s ease;overflow-y:auto;}
+.cart-panel{background:var(--bg2);border-left:1px solid var(--border);width:100%;max-width:460px;height:100vh;display:flex;flex-direction:column;animation:slideIn .25s ease;overflow-y:auto;}
 @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
 .cart-header{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg2);z-index:10;}
 .cart-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;}
-.cart-close{background:none;border:none;color:var(--dim);font-size:22px;cursor:pointer;transition:color .2s;}
-.cart-close:hover{color:var(--text);}
-
-/* STEPS */
+.cart-close{background:none;border:none;color:var(--dim);font-size:22px;cursor:pointer;}
 .cart-steps{display:flex;border-bottom:1px solid var(--border);}
 .cstep{flex:1;text-align:center;font-size:12px;color:var(--dim);padding:12px 4px;border-bottom:2px solid transparent;cursor:pointer;transition:all .2s;}
 .cstep.active{color:var(--cyan);border-bottom-color:var(--cyan);font-weight:500;}
 .cstep.done{color:var(--green);border-bottom-color:var(--green);}
 .step-content{display:none;padding:20px 24px;}
 .step-content.active{display:block;}
-
-/* CART ITEMS */
 .cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);}
 .cart-item-icon{width:48px;height:48px;background:rgba(0,30,60,0.8);border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
 .cart-item-info{flex:1;}
 .cart-item-name{font-size:13px;font-weight:500;margin-bottom:4px;line-height:1.3;}
 .cart-item-price{font-family:'Rajdhani',sans-serif;font-size:18px;color:var(--cyan);}
 .cart-item-controls{display:flex;align-items:center;gap:8px;margin-top:6px;}
-.qty-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:6px;color:var(--text);width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s;}
-.qty-btn:hover{border-color:var(--cyan);}
+.qty-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:6px;color:var(--text);width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;}
 .qty-num{font-size:14px;font-weight:500;min-width:20px;text-align:center;}
-.remove-btn{background:none;border:none;color:rgba(255,80,80,0.6);cursor:pointer;font-size:13px;margin-left:auto;transition:color .2s;}
-.remove-btn:hover{color:#ff4444;}
+.remove-btn{background:none;border:none;color:rgba(255,80,80,0.6);cursor:pointer;font-size:13px;margin-left:auto;}
 .cart-empty{text-align:center;padding:60px 20px;color:var(--dim);}
 
 /* FORM */
@@ -117,49 +109,78 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .ff select option{background:#061428;}
 .ff textarea{resize:none;height:65px;}
 .ff input::placeholder,.ff textarea::placeholder{color:rgba(200,230,255,0.25);}
+.ff input.ok{border-color:rgba(0,230,118,0.5);}
 .cep-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:10px;}
-.cep-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);font-size:12px;padding:9px 14px;cursor:pointer;white-space:nowrap;transition:all .2s;}
-.cep-btn:hover{border-color:var(--cyan);}
+.cep-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);font-size:12px;padding:9px 14px;cursor:pointer;white-space:nowrap;}
+.cep-loading{font-size:12px;color:var(--dim);text-align:center;padding:6px 0;}
 .info-box{background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.18);border-radius:10px;padding:12px 16px;margin-bottom:12px;}
 .info-box p{font-size:13px;color:var(--dim);line-height:1.5;}
 .info-box p strong{color:var(--text);}
 
-/* FRETE CALCULADO */
-.frete-result{background:rgba(0,230,118,0.07);border:1px solid rgba(0,230,118,0.25);border-radius:10px;padding:12px 16px;margin-top:10px;margin-bottom:4px;}
+/* FRETE */
+.frete-result{background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.22);border-radius:10px;padding:12px 14px;margin-top:10px;}
 .frete-result-title{font-size:10px;color:#00e676;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600;}
-.frete-option{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(0,230,118,0.12);cursor:pointer;}
-.frete-option:last-child{border-bottom:none;}
-.frete-option:hover .frete-option-name{color:var(--cyan);}
-.frete-option-name{font-size:13px;color:var(--text);}
-.frete-option-prazo{font-size:11px;color:var(--dim);}
-.frete-option-val{font-family:'Rajdhani',sans-serif;font-size:16px;color:#00e676;font-weight:700;}
-.frete-option.selected{background:rgba(0,212,255,0.07);border-radius:6px;padding:6px 8px;margin:2px -8px;}
-.frete-option.selected .frete-option-name{color:var(--cyan);}
-.frete-loading{font-size:13px;color:var(--dim);text-align:center;padding:12px 0;}
+.frete-opt{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:7px;cursor:pointer;border:1px solid transparent;margin-bottom:5px;transition:all .2s;}
+.frete-opt:last-child{margin-bottom:0;}
+.frete-opt:hover{border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.06);}
+.frete-opt.sel{border-color:var(--cyan);background:rgba(0,212,255,0.1);}
+.frete-opt-info{display:flex;flex-direction:column;gap:2px;}
+.frete-opt-nome{font-size:13px;color:var(--text);font-weight:500;}
+.frete-opt-prazo{font-size:11px;color:var(--dim);}
+.frete-opt-val{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;color:#00e676;}
+.frete-uf-sel{margin-top:8px;}
 
-/* PIX STEP */
+/* PAGAMENTO TABS */
+.pay-tabs{display:flex;gap:8px;margin-bottom:18px;}
+.pay-tab{flex:1;background:rgba(0,30,60,0.6);border:1px solid var(--border);border-radius:10px;padding:12px 8px;cursor:pointer;text-align:center;transition:all .2s;}
+.pay-tab:hover{border-color:rgba(0,212,255,0.4);}
+.pay-tab.active{border-color:var(--cyan);background:rgba(0,212,255,0.1);}
+.pay-tab-icon{font-size:22px;margin-bottom:4px;}
+.pay-tab-label{font-size:11px;color:var(--dim);font-weight:500;}
+.pay-tab.active .pay-tab-label{color:var(--cyan);}
+.pay-section{display:none;}
+.pay-section.active{display:block;}
+
+/* PIX */
 .pix-center{text-align:center;}
-.pix-icon{font-size:44px;margin-bottom:10px;}
-.pix-title-s{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px;}
-.pix-sub{font-size:13px;color:var(--dim);margin-bottom:16px;line-height:1.5;}
+.pix-title-s{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;}
+.pix-sub{font-size:13px;color:var(--dim);margin-bottom:14px;line-height:1.5;}
 .order-summary{background:rgba(0,30,60,0.5);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:14px;text-align:left;}
 .os-title{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
 .os-item{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;color:var(--dim);}
 .os-item span:last-child{color:var(--cyan);}
 .os-total{display:flex;justify-content:space-between;font-size:14px;font-weight:500;border-top:1px solid var(--border);padding-top:8px;margin-top:4px;}
-.qr-wrap{display:flex;justify-content:center;margin-bottom:12px;}
+.qr-wrap{display:flex;justify-content:center;margin-bottom:10px;}
 .qr-inner{background:#fff;border-radius:14px;padding:12px;border:2px solid rgba(0,212,255,0.3);display:inline-block;}
-.pix-key-box{background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;margin-bottom:10px;}
+.pix-key-box{background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
 .pix-key-label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
 .pix-key-val{font-family:'Rajdhani',sans-serif;font-size:17px;color:var(--cyan);}
-.copy-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);padding:7px 12px;cursor:pointer;font-size:12px;font-weight:600;white-space:nowrap;transition:all .2s;}
-.copy-btn:hover{background:rgba(0,212,255,0.22);}
-.pix-amount{font-family:'Rajdhani',sans-serif;font-size:36px;font-weight:700;color:var(--cyan);margin:10px 0;}
-.pix-steps-s{text-align:left;margin:10px 0 16px;}
-.pix-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:13px;color:var(--dim);}
+.copy-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);padding:7px 12px;cursor:pointer;font-size:12px;font-weight:600;white-space:nowrap;}
+.pix-amount{font-family:'Rajdhani',sans-serif;font-size:34px;font-weight:700;color:var(--cyan);margin:8px 0;}
+.pix-steps-s{text-align:left;margin:8px 0 14px;}
+.pix-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:7px;font-size:13px;color:var(--dim);}
 .pix-step-num{background:var(--cyan-dim);border:1px solid var(--border);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--cyan);flex-shrink:0;}
 
-/* CART FOOTER */
+/* CARTÃO */
+.card-form{background:rgba(0,30,60,0.5);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;}
+.card-visual{background:linear-gradient(135deg,#0a2540,#0066cc);border-radius:12px;padding:18px 20px;margin-bottom:16px;position:relative;min-height:130px;}
+.card-chip{width:32px;height:24px;background:linear-gradient(135deg,#f0c040,#c8a020);border-radius:4px;margin-bottom:16px;}
+.card-num-display{font-family:'Rajdhani',sans-serif;font-size:18px;letter-spacing:3px;color:#fff;margin-bottom:14px;}
+.card-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+.card-holder-display{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1px;}
+.card-exp-display{font-size:12px;color:rgba(255,255,255,0.7);}
+.card-band{position:absolute;top:16px;right:16px;font-size:24px;}
+.parcelas-sel{margin-top:10px;}
+
+/* BOLETO */
+.boleto-box{background:rgba(0,30,60,0.5);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;margin-bottom:14px;}
+.boleto-icon{font-size:48px;margin-bottom:10px;}
+.boleto-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;}
+.boleto-sub{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px;}
+.boleto-prazo{background:rgba(255,180,50,0.1);border:1px solid rgba(255,180,50,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:#ffb432;margin-bottom:14px;}
+.boleto-line{background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:monospace;font-size:12px;color:var(--cyan);word-break:break-all;margin-bottom:10px;text-align:left;}
+
+/* FOOTER CART */
 .cart-footer{padding:18px 24px;border-top:1px solid var(--border);background:var(--bg2);position:sticky;bottom:0;}
 .cart-total-row{display:flex;justify-content:space-between;margin-bottom:5px;}
 .cart-total-label{font-size:13px;color:var(--dim);}
@@ -168,8 +189,7 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .checkout-btn{width:100%;background:linear-gradient(135deg,#0066cc,#00d4ff);border:none;border-radius:12px;color:#fff;font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;letter-spacing:1px;padding:14px;cursor:pointer;margin-top:12px;transition:opacity .2s;text-transform:uppercase;}
 .checkout-btn:hover{opacity:.88;}
 .checkout-btn.green{background:linear-gradient(135deg,#25d366,#1da851);}
-.back-btn{background:none;border:1px solid var(--border);border-radius:10px;color:var(--dim);font-size:13px;padding:10px;cursor:pointer;width:100%;margin-top:8px;transition:all .2s;}
-.back-btn:hover{border-color:var(--cyan);color:var(--text);}
+.back-btn{background:none;border:1px solid var(--border);border-radius:10px;color:var(--dim);font-size:13px;padding:10px;cursor:pointer;width:100%;margin-top:8px;}
 
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.35);border-radius:12px;color:var(--text);padding:12px 22px;font-size:14px;z-index:400;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
@@ -183,13 +203,13 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
   .topbar{display:none;}header{padding:12px 16px;gap:12px;}
   nav{padding:0 16px;top:69px;}main{padding:20px 16px;}
   .frow{grid-template-columns:1fr;}
+  .pay-tabs{flex-direction:column;}
 }
 </style>
 </head>
 <body>
-
 <div class="topbar">
-  <span class="topbar-left">🚚 Entrega via Sedex · Retirada no Morumbi/SP</span>
+  <span class="topbar-left">🚚 Entrega via Sedex para todo o Brasil</span>
   <div class="topbar-right">
     <a href="https://wa.me/5511920919983" target="_blank">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.984-1.413A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.065-1.115l-.29-.173-3.004.852.867-2.931-.19-.3A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
@@ -239,7 +259,7 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
     <div>
       <p style="font-size:12px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">✦ UpTech Store · Oficial</p>
       <h1 class="banner-title">Peças & Equipamentos<br>com <span>Procedência</span></h1>
-      <p class="banner-sub">Produtos novos e seminovos · Entrega via Sedex · Retirada no Morumbi</p>
+      <p class="banner-sub">Produtos novos e seminovos · Entrega via Sedex · Todo o Brasil</p>
       <button class="banner-btn" onclick="filterCat('todos',document.querySelector('.nav-btn'))">Ver Produtos</button>
     </div>
     <div class="banner-icons">
@@ -270,7 +290,6 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
       <span class="cart-title" id="cartTitle">🛒 Carrinho</span>
       <button class="cart-close" onclick="closeCart()">✕</button>
     </div>
-
     <div class="cart-steps">
       <div class="cstep active" id="tab1" onclick="goStep(1)">1. Produtos</div>
       <div class="cstep" id="tab2">2. Entrega</div>
@@ -295,74 +314,132 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
         <div class="ff"><label>CPF</label><input type="text" id="fCpf" placeholder="000.000.000-00"></div>
       </div>
 
-      <div class="fsec-title">📦 Modalidade de entrega</div>
-      <div class="frow full" style="margin-bottom:14px;">
-        <div class="ff">
-          <select id="fMod" onchange="toggleMod()">
-            <option value="">Selecionar...</option>
-            <option value="sedex">Entrega via Correios (todo o Brasil)</option>
-            <option value="retirada">Retirada no Morumbi/SP — Grátis</option>
-          </select>
-        </div>
+      <div class="fsec-title">📍 Endereço de entrega</div>
+      <div class="cep-row">
+        <div class="ff"><label>CEP</label><input type="text" id="fCep" placeholder="00000-000" maxlength="9" oninput="mCep(this)"></div>
+        <button class="cep-btn" onclick="buscarCep()">🔍 Buscar</button>
       </div>
-
-      <div id="secSedex" style="display:none;">
-        <div class="fsec-title">📍 Endereço de entrega</div>
-        <div class="cep-row">
-          <div class="ff"><label>CEP</label><input type="text" id="fCep" placeholder="00000-000" maxlength="9" oninput="mCep(this)"></div>
-          <button class="cep-btn" onclick="buscarCep()">🔍 Buscar</button>
-        </div>
-        <div class="frow full"><div class="ff"><label>Rua / Avenida</label><input type="text" id="fRua" placeholder="Ex: Av. Paulista"></div></div>
-        <div class="frow">
-          <div class="ff"><label>Número</label><input type="text" id="fNum" placeholder="Ex: 1000"></div>
-          <div class="ff"><label>Complemento</label><input type="text" id="fComp" placeholder="Apto, bloco..."></div>
-        </div>
-        <div class="frow">
-          <div class="ff"><label>Bairro</label><input type="text" id="fBairro" placeholder="Bairro"></div>
-          <div class="ff"><label>Cidade / UF</label><input type="text" id="fCidade" placeholder="São Paulo / SP"></div>
-        </div>
-        <!-- FRETE CALCULADO -->
-        <div id="freteBox" style="display:none;"></div>
+      <div id="cepStatus" class="cep-loading" style="display:none;"></div>
+      <div class="frow full"><div class="ff"><label>Rua / Avenida</label><input type="text" id="fRua" placeholder="Preenchido automaticamente"></div></div>
+      <div class="frow">
+        <div class="ff"><label>Número</label><input type="text" id="fNum" placeholder="Ex: 1000"></div>
+        <div class="ff"><label>Complemento</label><input type="text" id="fComp" placeholder="Apto, bloco..."></div>
       </div>
-
-      <div id="secRetirada" style="display:none;">
-        <div class="info-box" style="margin-bottom:14px;">
-          <p><strong>📍 Local de retirada:</strong></p>
-          <p style="margin-top:4px;">R. Leandro Teixeira, 115 — Morumbi, São Paulo/SP</p>
-          <p style="margin-top:4px;">⏰ Agendar horário via WhatsApp após confirmação</p>
-        </div>
+      <div class="frow">
+        <div class="ff"><label>Bairro</label><input type="text" id="fBairro" placeholder="Preenchido automaticamente"></div>
+        <div class="ff"><label>Cidade / UF</label><input type="text" id="fCidade" placeholder="Preenchido automaticamente"></div>
       </div>
+      <div id="freteBox" style="display:none;"></div>
 
       <div class="fsec-title">💬 Observações</div>
-      <div class="ff"><textarea id="fObs" placeholder="Alguma informação adicional para o pedido..."></textarea></div>
+      <div class="ff"><textarea id="fObs" placeholder="Alguma informação adicional..."></textarea></div>
     </div>
 
     <!-- STEP 3 -->
     <div class="step-content" id="step3">
-      <div class="pix-center">
-        <div class="pix-icon">💳</div>
-        <h2 class="pix-title-s">Pagamento via Pix</h2>
-        <p class="pix-sub">Escaneie o QR Code ou copie a chave. Envie o comprovante pelo WhatsApp para confirmar.</p>
-        <div class="order-summary" id="orderSum"></div>
-        <div class="qr-wrap"><div class="qr-inner"><div id="qrcode"></div></div></div>
-        <p style="font-size:11px;color:var(--dim);margin-bottom:12px;">📷 Aponte a câmera do seu banco para o QR Code</p>
-        <div class="pix-key-box">
-          <div>
-            <div class="pix-key-label">Chave Pix (Telefone)</div>
-            <div class="pix-key-val">11 92091-9983</div>
-          </div>
-          <button class="copy-btn" onclick="copiarPix()">📋 Copiar</button>
+      <div class="order-summary" id="orderSum"></div>
+
+      <!-- ABAS DE PAGAMENTO -->
+      <div class="fsec-title">💳 Forma de pagamento</div>
+      <div class="pay-tabs">
+        <div class="pay-tab active" onclick="selectPayTab('pix',this)">
+          <div class="pay-tab-icon">⬡</div>
+          <div class="pay-tab-label">Pix</div>
         </div>
-        <div class="pix-amount" id="pixAmt">R$ 0,00</div>
-        <div class="pix-steps-s">
-          <div class="pix-step"><div class="pix-step-num">1</div><span>Escaneie o QR Code ou copie a chave Pix</span></div>
-          <div class="pix-step"><div class="pix-step-num">2</div><span>Confirme o valor e finalize o pagamento</span></div>
-          <div class="pix-step"><div class="pix-step-num">3</div><span>Envie o comprovante no WhatsApp para confirmar</span></div>
+        <div class="pay-tab" onclick="selectPayTab('credito',this)">
+          <div class="pay-tab-icon">💳</div>
+          <div class="pay-tab-label">Crédito</div>
+        </div>
+        <div class="pay-tab" onclick="selectPayTab('boleto',this)">
+          <div class="pay-tab-icon">📄</div>
+          <div class="pay-tab-label">Boleto</div>
+        </div>
+      </div>
+
+      <!-- PIX -->
+      <div class="pay-section active" id="pay-pix">
+        <div class="pix-center">
+          <p class="pix-sub">Escaneie o QR Code ou copie a chave. Após o pagamento, envie o comprovante pelo WhatsApp.</p>
+          <div class="qr-wrap"><div class="qr-inner"><div id="qrcode"></div></div></div>
+          <p style="font-size:11px;color:var(--dim);margin-bottom:10px;">📷 Aponte a câmera do app do seu banco</p>
+          <div class="pix-key-box">
+            <div>
+              <div class="pix-key-label">Chave Pix (Telefone)</div>
+              <div class="pix-key-val">11 92091-9983</div>
+            </div>
+            <button class="copy-btn" onclick="copiarPix()">📋 Copiar</button>
+          </div>
+          <div class="pix-amount" id="pixAmt">R$ 0,00</div>
+          <div class="pix-steps-s">
+            <div class="pix-step"><div class="pix-step-num">1</div><span>Escaneie o QR Code ou copie a chave</span></div>
+            <div class="pix-step"><div class="pix-step-num">2</div><span>Confirme o valor no app do banco</span></div>
+            <div class="pix-step"><div class="pix-step-num">3</div><span>Envie o comprovante no WhatsApp</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRÉDITO -->
+      <div class="pay-section" id="pay-credito">
+        <div class="card-form">
+          <div class="card-visual">
+            <div class="card-chip"></div>
+            <div class="card-num-display" id="cardNumDisplay">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">TITULAR</div>
+                <div class="card-holder-display" id="cardHolderDisplay">SEU NOME</div>
+              </div>
+              <div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">VALIDADE</div>
+                <div class="card-exp-display" id="cardExpDisplay">MM/AA</div>
+              </div>
+            </div>
+            <div class="card-band" id="cardBand">💳</div>
+          </div>
+          <div class="frow full" style="margin-bottom:10px;">
+            <div class="ff"><label>Número do cartão</label>
+              <input type="text" id="ccNum" placeholder="0000 0000 0000 0000" maxlength="19" oninput="fmtCard(this)" autocomplete="cc-number">
+            </div>
+          </div>
+          <div class="frow full" style="margin-bottom:10px;">
+            <div class="ff"><label>Nome no cartão</label>
+              <input type="text" id="ccHolder" placeholder="NOME COMO NO CARTÃO" oninput="document.getElementById('cardHolderDisplay').textContent=this.value.toUpperCase()||'SEU NOME'" style="text-transform:uppercase;" autocomplete="cc-name">
+            </div>
+          </div>
+          <div class="frow" style="margin-bottom:10px;">
+            <div class="ff"><label>Validade</label>
+              <input type="text" id="ccExp" placeholder="MM/AA" maxlength="5" oninput="fmtExp(this)" autocomplete="cc-exp">
+            </div>
+            <div class="ff"><label>CVV</label>
+              <input type="text" id="ccCvv" placeholder="•••" maxlength="4" autocomplete="cc-csc">
+            </div>
+          </div>
+          <div class="frow full parcelas-sel">
+            <div class="ff"><label>Parcelamento</label>
+              <select id="ccParc"></select>
+            </div>
+          </div>
+        </div>
+        <div class="info-box">
+          <p>🔒 Seus dados são <strong>criptografados</strong>. O pedido é confirmado via WhatsApp após análise.</p>
+        </div>
+      </div>
+
+      <!-- BOLETO -->
+      <div class="pay-section" id="pay-boleto">
+        <div class="boleto-box">
+          <div class="boleto-icon">📄</div>
+          <div class="boleto-title">Boleto Bancário</div>
+          <p class="boleto-sub">O boleto é gerado após a confirmação do pedido via WhatsApp. Válido por 3 dias úteis.</p>
+          <div class="boleto-prazo">⏰ Prazo de compensação: até 2 dias úteis após o pagamento</div>
+          <div class="boleto-line" id="boletoLine">Código gerado após confirmação do pedido</div>
+        </div>
+        <div class="info-box">
+          <p>📲 Após clicar em <strong>"Confirmar pedido"</strong>, você receberá o boleto pelo WhatsApp em até 30 minutos.</p>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <div class="cart-footer" id="cartFooter">
       <div class="cart-total-row"><span class="cart-total-label">Subtotal</span><span class="cart-total-val" id="subtotalVal">R$ 0,00</span></div>
       <div class="cart-total-row"><span class="cart-total-label">Frete</span><span class="cart-total-val" id="freteVal" style="color:var(--dim);">A calcular</span></div>
@@ -403,78 +480,189 @@ const PRODUTOS=[
 ];
 
 let cart=[],currentCat='todos',searchTerm='',step=1;
-let freteSelecionado=0,freteSelecionadoNome='A calcular';
+let freteSel=0,freteNome='A calcular',payTab='pix';
+let ufAtual='';
 
-// ─── FRETE por UF (tabela simplificada Correios SEDEX/PAC) ───
-const FRETE_TABLE={
-  'SP':{sedex:18.90,pac:12.50,sedex_prazo:'1-2 dias úteis',pac_prazo:'3-5 dias úteis'},
-  'RJ':{sedex:22.90,pac:14.50,sedex_prazo:'1-2 dias úteis',pac_prazo:'4-6 dias úteis'},
-  'MG':{sedex:22.90,pac:14.50,sedex_prazo:'1-2 dias úteis',pac_prazo:'4-6 dias úteis'},
-  'ES':{sedex:24.90,pac:15.50,sedex_prazo:'2-3 dias úteis',pac_prazo:'5-7 dias úteis'},
-  'PR':{sedex:24.90,pac:15.50,sedex_prazo:'2-3 dias úteis',pac_prazo:'5-7 dias úteis'},
-  'SC':{sedex:24.90,pac:15.50,sedex_prazo:'2-3 dias úteis',pac_prazo:'5-7 dias úteis'},
-  'RS':{sedex:26.90,pac:16.90,sedex_prazo:'2-3 dias úteis',pac_prazo:'6-8 dias úteis'},
-  'GO':{sedex:26.90,pac:16.90,sedex_prazo:'2-3 dias úteis',pac_prazo:'6-8 dias úteis'},
-  'DF':{sedex:26.90,pac:16.90,sedex_prazo:'2-3 dias úteis',pac_prazo:'6-8 dias úteis'},
-  'MT':{sedex:28.90,pac:18.50,sedex_prazo:'3-4 dias úteis',pac_prazo:'7-10 dias úteis'},
-  'MS':{sedex:28.90,pac:18.50,sedex_prazo:'3-4 dias úteis',pac_prazo:'7-10 dias úteis'},
-  'BA':{sedex:28.90,pac:18.50,sedex_prazo:'3-4 dias úteis',pac_prazo:'7-10 dias úteis'},
-  'SE':{sedex:30.90,pac:19.90,sedex_prazo:'3-4 dias úteis',pac_prazo:'8-11 dias úteis'},
-  'AL':{sedex:30.90,pac:19.90,sedex_prazo:'3-4 dias úteis',pac_prazo:'8-11 dias úteis'},
-  'PE':{sedex:30.90,pac:19.90,sedex_prazo:'3-4 dias úteis',pac_prazo:'8-11 dias úteis'},
-  'PB':{sedex:30.90,pac:19.90,sedex_prazo:'3-5 dias úteis',pac_prazo:'9-12 dias úteis'},
-  'RN':{sedex:30.90,pac:19.90,sedex_prazo:'3-5 dias úteis',pac_prazo:'9-12 dias úteis'},
-  'CE':{sedex:32.90,pac:21.90,sedex_prazo:'3-5 dias úteis',pac_prazo:'9-12 dias úteis'},
-  'PI':{sedex:32.90,pac:21.90,sedex_prazo:'4-5 dias úteis',pac_prazo:'10-13 dias úteis'},
-  'MA':{sedex:32.90,pac:21.90,sedex_prazo:'4-5 dias úteis',pac_prazo:'10-13 dias úteis'},
-  'TO':{sedex:34.90,pac:23.90,sedex_prazo:'4-6 dias úteis',pac_prazo:'11-14 dias úteis'},
-  'PA':{sedex:36.90,pac:25.90,sedex_prazo:'4-6 dias úteis',pac_prazo:'12-15 dias úteis'},
-  'AP':{sedex:38.90,pac:27.90,sedex_prazo:'5-7 dias úteis',pac_prazo:'13-17 dias úteis'},
-  'AM':{sedex:38.90,pac:27.90,sedex_prazo:'5-7 dias úteis',pac_prazo:'13-17 dias úteis'},
-  'RO':{sedex:38.90,pac:27.90,sedex_prazo:'5-7 dias úteis',pac_prazo:'13-17 dias úteis'},
-  'RR':{sedex:40.90,pac:29.90,sedex_prazo:'6-8 dias úteis',pac_prazo:'14-18 dias úteis'},
-  'AC':{sedex:40.90,pac:29.90,sedex_prazo:'6-8 dias úteis',pac_prazo:'14-18 dias úteis'},
+const FRETE={
+  'SP':{sedex:18.90,pac:12.50,sp:'1-2 dias úteis',pp:'3-5 dias úteis'},
+  'RJ':{sedex:22.90,pac:14.50,sp:'1-2 dias úteis',pp:'4-6 dias úteis'},
+  'MG':{sedex:22.90,pac:14.50,sp:'1-2 dias úteis',pp:'4-6 dias úteis'},
+  'ES':{sedex:24.90,pac:15.50,sp:'2-3 dias úteis',pp:'5-7 dias úteis'},
+  'PR':{sedex:24.90,pac:15.50,sp:'2-3 dias úteis',pp:'5-7 dias úteis'},
+  'SC':{sedex:24.90,pac:15.50,sp:'2-3 dias úteis',pp:'5-7 dias úteis'},
+  'RS':{sedex:26.90,pac:16.90,sp:'2-3 dias úteis',pp:'6-8 dias úteis'},
+  'GO':{sedex:26.90,pac:16.90,sp:'2-3 dias úteis',pp:'6-8 dias úteis'},
+  'DF':{sedex:26.90,pac:16.90,sp:'2-3 dias úteis',pp:'6-8 dias úteis'},
+  'MT':{sedex:28.90,pac:18.50,sp:'3-4 dias úteis',pp:'7-10 dias úteis'},
+  'MS':{sedex:28.90,pac:18.50,sp:'3-4 dias úteis',pp:'7-10 dias úteis'},
+  'BA':{sedex:28.90,pac:18.50,sp:'3-4 dias úteis',pp:'7-10 dias úteis'},
+  'SE':{sedex:30.90,pac:19.90,sp:'3-4 dias úteis',pp:'8-11 dias úteis'},
+  'AL':{sedex:30.90,pac:19.90,sp:'3-4 dias úteis',pp:'8-11 dias úteis'},
+  'PE':{sedex:30.90,pac:19.90,sp:'3-4 dias úteis',pp:'8-11 dias úteis'},
+  'PB':{sedex:30.90,pac:19.90,sp:'3-5 dias úteis',pp:'9-12 dias úteis'},
+  'RN':{sedex:30.90,pac:19.90,sp:'3-5 dias úteis',pp:'9-12 dias úteis'},
+  'CE':{sedex:32.90,pac:21.90,sp:'3-5 dias úteis',pp:'9-12 dias úteis'},
+  'PI':{sedex:32.90,pac:21.90,sp:'4-5 dias úteis',pp:'10-13 dias úteis'},
+  'MA':{sedex:32.90,pac:21.90,sp:'4-5 dias úteis',pp:'10-13 dias úteis'},
+  'TO':{sedex:34.90,pac:23.90,sp:'4-6 dias úteis',pp:'11-14 dias úteis'},
+  'PA':{sedex:36.90,pac:25.90,sp:'4-6 dias úteis',pp:'12-15 dias úteis'},
+  'AP':{sedex:38.90,pac:27.90,sp:'5-7 dias úteis',pp:'13-17 dias úteis'},
+  'AM':{sedex:38.90,pac:27.90,sp:'5-7 dias úteis',pp:'13-17 dias úteis'},
+  'RO':{sedex:38.90,pac:27.90,sp:'5-7 dias úteis',pp:'13-17 dias úteis'},
+  'RR':{sedex:40.90,pac:29.90,sp:'6-8 dias úteis',pp:'14-18 dias úteis'},
+  'AC':{sedex:40.90,pac:29.90,sp:'6-8 dias úteis',pp:'14-18 dias úteis'},
 };
 
-function calcularFretePorUF(uf){
-  const t=FRETE_TABLE[uf.toUpperCase()];
-  if(!t) return FRETE_TABLE['SP']; // fallback
-  return t;
-}
+function getFreteUF(uf){return FRETE[uf.toUpperCase()]||FRETE['SP'];}
 
-function renderFrete(uf){
+function renderFreteOpcoes(uf){
+  ufAtual=uf;
+  const t=getFreteUF(uf);
   const box=document.getElementById('freteBox');
-  const t=calcularFretePorUF(uf);
+  freteSel=0; freteNome='A calcular'; updateTotals();
   box.style.display='block';
   box.innerHTML=`
     <div class="frete-result">
-      <div class="frete-result-title">🚚 Opções de frete para ${uf.toUpperCase()}</div>
-      <div class="frete-option" id="fop-sedex" onclick="selecionarFrete(${t.sedex},'SEDEX',this)">
-        <div><div class="frete-option-name">📦 SEDEX</div><div class="frete-option-prazo">${t.sedex_prazo}</div></div>
-        <div class="frete-option-val">R$ ${t.sedex.toFixed(2).replace('.',',')}</div>
+      <div class="frete-result-title">🚚 Opções de frete — ${uf.toUpperCase()}</div>
+      <div class="frete-opt" id="fo-sedex" onclick="selFrete(${t.sedex},'SEDEX',this)">
+        <div class="frete-opt-info"><span class="frete-opt-nome">📦 SEDEX</span><span class="frete-opt-prazo">${t.sp}</span></div>
+        <span class="frete-opt-val">R$ ${t.sedex.toFixed(2).replace('.',',')}</span>
       </div>
-      <div class="frete-option" id="fop-pac" onclick="selecionarFrete(${t.pac},'PAC',this)">
-        <div><div class="frete-option-name">📬 PAC</div><div class="frete-option-prazo">${t.pac_prazo}</div></div>
-        <div class="frete-option-val">R$ ${t.pac.toFixed(2).replace('.',',')}</div>
+      <div class="frete-opt" id="fo-pac" onclick="selFrete(${t.pac},'PAC',this)">
+        <div class="frete-opt-info"><span class="frete-opt-nome">📬 PAC</span><span class="frete-opt-prazo">${t.pp}</span></div>
+        <span class="frete-opt-val">R$ ${t.pac.toFixed(2).replace('.',',')}</span>
       </div>
     </div>`;
 }
 
-function selecionarFrete(valor,nome,el){
-  document.querySelectorAll('.frete-option').forEach(e=>e.classList.remove('selected'));
-  el.classList.add('selected');
-  freteSelecionado=valor;
-  freteSelecionadoNome=nome;
+function selFrete(val,nome,el){
+  document.querySelectorAll('.frete-opt').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel');
+  freteSel=val; freteNome=nome;
   updateTotals();
-  showToast(`✓ ${nome} selecionado — R$ ${valor.toFixed(2).replace('.',',')}`);
+  showToast(`✓ ${nome} — R$ ${val.toFixed(2).replace('.',',')} selecionado`);
 }
 
+// ─── BUSCA CEP com múltiplas APIs ───
+async function buscarCep(){
+  const cep=document.getElementById('fCep').value.replace(/\D/g,'');
+  if(cep.length!==8){showToast('⚠️ CEP inválido');return;}
+  const status=document.getElementById('cepStatus');
+  status.style.display='block';
+  status.textContent='🔍 Buscando endereço...';
+  document.getElementById('freteBox').style.display='none';
+  freteSel=0; freteNome='A calcular'; updateTotals();
+
+  const apis=[
+    ()=>fetch(`https://viacep.com.br/ws/${cep}/json/`).then(r=>r.json()).then(d=>{
+      if(d.erro)throw new Error('not found');
+      return{rua:d.logradouro,bairro:d.bairro,cidade:d.localidade,uf:d.uf};
+    }),
+    ()=>fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`).then(r=>r.json()).then(d=>{
+      if(d.message)throw new Error('not found');
+      return{rua:d.street||'',bairro:d.neighborhood||'',cidade:d.city||'',uf:d.state||''};
+    }),
+    ()=>fetch(`https://opencep.com/v1/${cep}`).then(r=>r.json()).then(d=>{
+      if(!d.cep)throw new Error('not found');
+      return{rua:d.logradouro||'',bairro:d.bairro||'',cidade:d.localidade||'',uf:d.uf||''};
+    }),
+  ];
+
+  for(const api of apis){
+    try{
+      const d=await api();
+      if(d.uf){
+        document.getElementById('fRua').value=d.rua||'';
+        document.getElementById('fBairro').value=d.bairro||'';
+        document.getElementById('fCidade').value=d.cidade&&d.uf?`${d.cidade} / ${d.uf}`:d.cidade||'';
+        ['fRua','fBairro','fCidade'].forEach(id=>{
+          const el=document.getElementById(id);
+          if(el.value) el.classList.add('ok');
+        });
+        status.style.display='none';
+        showToast('✓ Endereço preenchido automaticamente!');
+        renderFreteOpcoes(d.uf);
+        return;
+      }
+    }catch(e){}
+  }
+
+  // Fallback manual
+  status.textContent='⚠️ CEP não encontrado. Preencha manualmente e selecione o estado:';
+  document.getElementById('freteBox').style.display='block';
+  document.getElementById('freteBox').innerHTML=`
+    <div class="frete-result">
+      <div class="frete-result-title">📍 Selecione o estado para calcular o frete</div>
+      <div class="frete-uf-sel">
+        <div class="ff"><select onchange="if(this.value)renderFreteOpcoes(this.value)" style="background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;width:100%;outline:none;">
+          <option value="">Selecione o estado...</option>
+          ${['AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'].map(u=>`<option value="${u}">${u}</option>`).join('')}
+        </select></div>
+      </div>
+    </div>`;
+}
+
+function mCep(el){
+  let v=el.value.replace(/\D/g,'').slice(0,8);
+  if(v.length>5)v=v.slice(0,5)+'-'+v.slice(5);
+  el.value=v;
+  if(v.replace('-','').length===8)buscarCep();
+}
+
+// ─── CARTÃO ───
+function fmtCard(el){
+  let v=el.value.replace(/\D/g,'').slice(0,16);
+  v=v.replace(/(.{4})/g,'$1 ').trim();
+  el.value=v;
+  document.getElementById('cardNumDisplay').textContent=v||'•••• •••• •••• ••••';
+  const b=v.replace(/ /g,'');
+  let band='💳';
+  if(b.startsWith('4'))band='🔵 Visa';
+  else if(/^5[1-5]/.test(b))band='🟡 MC';
+  else if(b.startsWith('3'))band='🟢 Amex';
+  document.getElementById('cardBand').textContent=band;
+  atualizarParcelas();
+}
+function fmtExp(el){
+  let v=el.value.replace(/\D/g,'');
+  if(v.length>2)v=v.slice(0,2)+'/'+v.slice(2,4);
+  el.value=v;
+  document.getElementById('cardExpDisplay').textContent=v||'MM/AA';
+}
+function atualizarParcelas(){
+  const total=getTotal();
+  const sel=document.getElementById('ccParc');
+  const parcelas=[];
+  for(let i=1;i<=12;i++){
+    const val=total/i;
+    if(i===1)parcelas.push(`<option value="1">1x de R$ ${total.toFixed(2).replace('.',',')} (sem juros)</option>`);
+    else if(i<=6)parcelas.push(`<option value="${i}">${i}x de R$ ${val.toFixed(2).replace('.',',')} (sem juros)</option>`);
+    else{const vj=total*(1+0.0199*i)/i;parcelas.push(`<option value="${i}">${i}x de R$ ${vj.toFixed(2).replace('.',',')} (com juros)</option>`);}
+  }
+  sel.innerHTML=parcelas.join('');
+}
+
+// ─── PAGAMENTO TABS ───
+function selectPayTab(tab,el){
+  payTab=tab;
+  document.querySelectorAll('.pay-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.pay-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('pay-'+tab).classList.add('active');
+  const nb=document.getElementById('nextBtn');
+  if(tab==='pix') nb.textContent='📲 Confirmar pelo WhatsApp';
+  else if(tab==='credito') nb.textContent='💳 Confirmar pagamento';
+  else nb.textContent='📄 Gerar boleto pelo WhatsApp';
+  nb.className='checkout-btn green';
+}
+
+// ─── PRODUTOS ───
 function renderProducts(){
   const grid=document.getElementById('productsGrid');
   const filtered=PRODUTOS.filter(p=>(currentCat==='todos'||p.cat===currentCat)&&(!searchTerm||p.nome.toLowerCase().includes(searchTerm)||p.spec.toLowerCase().includes(searchTerm)));
   document.getElementById('sectionTitle').textContent=searchTerm?`Busca: "${searchTerm}"`:CATS[currentCat];
   document.getElementById('sectionCount').textContent=`${filtered.length} produto${filtered.length!==1?'s':''}`;
-  if(!filtered.length){grid.innerHTML=`<div class="empty" style="grid-column:1/-1;"><div class="empty-icon">🔍</div><p>Nenhum produto encontrado</p></div>`;return;}
+  if(!filtered.length){grid.innerHTML=`<div class="empty" style="grid-column:1/-1;"><div style="font-size:48px;margin-bottom:12px;">🔍</div><p>Nenhum produto encontrado</p></div>`;return;}
   grid.innerHTML=filtered.map(p=>`
     <div class="product-card">
       <div class="product-img"><span>${p.icon}</span><span class="product-badge badge-${p.badge}">${p.badge}</span></div>
@@ -484,7 +672,7 @@ function renderProducts(){
         <p class="product-spec">${p.spec}</p>
         <div class="product-footer">
           <div>${p.precoAntigo?`<span class="product-price-old">R$ ${p.precoAntigo.toFixed(2).replace('.',',')}</span>`:''}<span class="product-price">R$ ${p.preco.toFixed(2).replace('.',',')}</span></div>
-          <button class="add-btn" onclick="addToCart(${p.id})" title="Adicionar ao carrinho">+</button>
+          <button class="add-btn" onclick="addToCart(${p.id})">+</button>
         </div>
       </div>
     </div>`).join('');
@@ -492,13 +680,12 @@ function renderProducts(){
 
 function filterCat(cat,btn){currentCat=cat;searchTerm='';document.getElementById('searchInput').value='';document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderProducts();}
 function searchProducts(){searchTerm=document.getElementById('searchInput').value.toLowerCase().trim();currentCat='todos';document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));document.querySelector('.nav-btn').classList.add('active');renderProducts();}
-
 function addToCart(id){const p=PRODUTOS.find(x=>x.id===id),ex=cart.find(x=>x.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1});updateCartBadge();showToast(`✓ ${p.nome} adicionado!`);}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);updateCartBadge();renderStep1();}
 function changeQty(id,delta){const it=cart.find(x=>x.id===id);if(!it)return;it.qty+=delta;if(it.qty<=0)removeFromCart(id);else{updateCartBadge();renderStep1();}}
 function updateCartBadge(){document.getElementById('cartBadge').textContent=cart.reduce((s,x)=>s+x.qty,0);}
 function getSubtotal(){return cart.reduce((s,x)=>s+x.preco*x.qty,0);}
-function getTotal(){return getSubtotal()+freteSelecionado;}
+function getTotal(){return getSubtotal()+freteSel;}
 function openCart(){document.getElementById('cartOverlay').classList.add('open');goStep(1);}
 function closeCart(){document.getElementById('cartOverlay').classList.remove('open');}
 function closeCartOutside(e){if(e.target===document.getElementById('cartOverlay'))closeCart();}
@@ -547,139 +734,35 @@ function renderStep1(){
   updateTotals();
 }
 
-function toggleMod(){
-  const m=document.getElementById('fMod').value;
-  document.getElementById('secSedex').style.display=m==='sedex'?'block':'none';
-  document.getElementById('secRetirada').style.display=m==='retirada'?'block':'none';
-  if(m==='retirada'){
-    freteSelecionado=0;
-    freteSelecionadoNome='Retirada (Grátis)';
-    document.getElementById('freteBox').style.display='none';
-  } else {
-    freteSelecionado=0;
-    freteSelecionadoNome='A calcular';
-  }
-  updateTotals();
-}
-
-function mCep(el){
-  let v=el.value.replace(/\D/g,'').slice(0,8);
-  if(v.length>5)v=v.slice(0,5)+'-'+v.slice(5);
-  el.value=v;
-}
-
-// ─── BUSCA CEP — múltiplas APIs com fallback ───
-async function buscarCep(){
-  const cep=document.getElementById('fCep').value.replace(/\D/g,'');
-  if(cep.length!==8){showToast('⚠️ CEP inválido — 8 dígitos');return;}
-  showToast('🔍 Buscando CEP...');
-  const freteBox=document.getElementById('freteBox');
-  freteBox.style.display='none';
-  freteSelecionado=0;
-  freteSelecionadoNome='A calcular';
-  updateTotals();
-
-  // Tenta API 1: ViaCEP via fetch direto
-  try{
-    const r=await fetch(`https://viacep.com.br/ws/${cep}/json/`,{mode:'cors'});
-    if(r.ok){
-      const d=await r.json();
-      if(!d.erro){
-        preencherEndereco(d.logradouro,d.bairro,d.localidade,d.uf);
-        showToast('✓ Endereço encontrado!');
-        renderFrete(d.uf);
-        return;
-      }
-    }
-  }catch(e){}
-
-  // Tenta API 2: BrasilAPI
-  try{
-    const r=await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
-    if(r.ok){
-      const d=await r.json();
-      preencherEndereco(d.street||'',d.neighborhood||'',d.city||'',d.state||'');
-      showToast('✓ Endereço encontrado!');
-      renderFrete(d.state||'SP');
-      return;
-    }
-  }catch(e){}
-
-  // Tenta API 3: OpenCEP
-  try{
-    const r=await fetch(`https://opencep.com/v1/${cep}`);
-    if(r.ok){
-      const d=await r.json();
-      if(d.cep){
-        preencherEndereco(d.logradouro||'',d.bairro||'',d.localidade||'',d.uf||'');
-        showToast('✓ Endereço encontrado!');
-        renderFrete(d.uf||'SP');
-        return;
-      }
-    }
-  }catch(e){}
-
-  // Fallback: pedir UF manualmente e calcular frete assim mesmo
-  showToast('⚠️ Preencha o endereço manualmente');
-  freteBox.style.display='block';
-  freteBox.innerHTML=`
-    <div class="frete-result">
-      <div class="frete-result-title">📍 Selecione seu estado para calcular o frete</div>
-      <div class="ff" style="margin-top:8px;">
-        <select onchange="if(this.value)renderFrete(this.value)" style="background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;width:100%;outline:none;">
-          <option value="">Selecione o estado...</option>
-          ${['AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'].map(uf=>`<option value="${uf}">${uf}</option>`).join('')}
-        </select>
-      </div>
-    </div>`;
-}
-
-function preencherEndereco(rua,bairro,cidade,uf){
-  document.getElementById('fRua').value=rua||'';
-  document.getElementById('fBairro').value=bairro||'';
-  document.getElementById('fCidade').value=cidade&&uf?`${cidade} / ${uf}`:cidade||'';
-}
-
 function validateStep2(){
   if(!document.getElementById('fNome').value.trim()){showToast('⚠️ Informe o nome');return false;}
   if(!document.getElementById('fWpp').value.trim()){showToast('⚠️ Informe o WhatsApp');return false;}
-  const mod=document.getElementById('fMod').value;
-  if(!mod){showToast('⚠️ Selecione a modalidade');return false;}
-  if(mod==='sedex'){
-    if(!document.getElementById('fCep').value.trim()){showToast('⚠️ Informe o CEP');return false;}
-    if(!document.getElementById('fRua').value.trim()){showToast('⚠️ Preencha o endereço');return false;}
-    if(freteSelecionado===0){showToast('⚠️ Selecione uma opção de frete');return false;}
-  }
+  if(!document.getElementById('fCep').value.trim()){showToast('⚠️ Informe o CEP');return false;}
+  if(!document.getElementById('fRua').value.trim()){showToast('⚠️ Preencha o endereço');return false;}
+  if(freteSel===0){showToast('⚠️ Selecione uma opção de frete');return false;}
   return true;
 }
 
 function renderStep3(){
-  const sub=getSubtotal(),mod=document.getElementById('fMod').value;
-  const total=getTotal();
+  const sub=getSubtotal(),total=getTotal();
   document.getElementById('orderSum').innerHTML=`
     <div class="os-title">Resumo do pedido</div>
     ${cart.map(it=>`<div class="os-item"><span>${it.nome} (x${it.qty})</span><span>R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}</span></div>`).join('')}
-    <div class="os-item"><span>Frete (${freteSelecionadoNome})</span><span style="color:${freteSelecionado===0?'#00e676':'var(--cyan)'};">${freteSelecionado===0?'Grátis':'R$ '+freteSelecionado.toFixed(2).replace('.',',')}</span></div>
+    <div class="os-item"><span>Frete (${freteNome})</span><span style="color:#00e676;">R$ ${freteSel.toFixed(2).replace('.',',')}</span></div>
     <div class="os-total"><span>Total</span><span>R$ ${total.toFixed(2).replace('.',',')}</span></div>`;
   document.getElementById('pixAmt').textContent=`R$ ${total.toFixed(2).replace('.',',')}`;
   const qrEl=document.getElementById('qrcode');
   qrEl.innerHTML='';
-  new QRCode(qrEl,{text:'11920919983',width:180,height:180,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+  new QRCode(qrEl,{text:'11920919983',width:160,height:160,colorDark:'#000',colorLight:'#fff',correctLevel:QRCode.CorrectLevel.H});
+  atualizarParcelas();
 }
 
 function updateTotals(){
-  const sub=getSubtotal();
-  const total=getTotal();
+  const sub=getSubtotal(),total=getTotal();
   document.getElementById('subtotalVal').textContent=`R$ ${sub.toFixed(2).replace('.',',')}`;
   const fv=document.getElementById('freteVal');
-  if(freteSelecionado===0&&freteSelecionadoNome==='A calcular'){
-    fv.textContent='A calcular';fv.style.color='var(--dim)';
-  } else if(freteSelecionado===0){
-    fv.textContent='Grátis';fv.style.color='#00e676';
-  } else {
-    fv.textContent=`R$ ${freteSelecionado.toFixed(2).replace('.',',')} (${freteSelecionadoNome})`;
-    fv.style.color='var(--cyan)';
-  }
+  if(freteSel===0&&freteNome==='A calcular'){fv.textContent='A calcular';fv.style.color='var(--dim)';}
+  else{fv.textContent=`R$ ${freteSel.toFixed(2).replace('.',',')} (${freteNome})`;fv.style.color='#00e676';}
   document.getElementById('totalVal').textContent=`R$ ${total.toFixed(2).replace('.',',')}`;
 }
 
@@ -687,37 +770,37 @@ function enviarPedido(){
   const nome=document.getElementById('fNome').value.trim();
   const wpp=document.getElementById('fWpp').value.trim();
   const cpf=document.getElementById('fCpf').value.trim();
-  const mod=document.getElementById('fMod').value;
   const obs=document.getElementById('fObs').value.trim();
-  const sub=getSubtotal();
-  const total=getTotal();
+  const sub=getSubtotal(),total=getTotal();
+  const cep=document.getElementById('fCep').value.trim();
+  const rua=document.getElementById('fRua').value.trim();
+  const num=document.getElementById('fNum').value.trim();
+  const comp=document.getElementById('fComp').value.trim();
+  const bairro=document.getElementById('fBairro').value.trim();
+  const cidade=document.getElementById('fCidade').value.trim();
+  const formaPgto=payTab==='pix'?'Pix (11920919983)':payTab==='credito'?'Cartão de Crédito':'Boleto Bancário';
+
   let msg=`🛒 *NOVO PEDIDO — UpTech Store*\n\n`;
   msg+=`👤 *Cliente:* ${nome}\n📱 *WhatsApp:* ${wpp}\n`;
   if(cpf)msg+=`🪪 *CPF:* ${cpf}\n`;
   msg+=`\n🛍️ *Produtos:*\n`;
   cart.forEach(it=>{msg+=`• ${it.nome} (x${it.qty}) — R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}\n`;});
   msg+=`\n💰 *Subtotal:* R$ ${sub.toFixed(2).replace('.',',')}\n`;
-  msg+=`🚚 *Frete (${freteSelecionadoNome}):* ${freteSelecionado===0?'Grátis':'R$ '+freteSelecionado.toFixed(2).replace('.',',')}\n`;
+  msg+=`🚚 *Frete (${freteNome}):* R$ ${freteSel.toFixed(2).replace('.',',')}\n`;
   msg+=`💵 *Total:* R$ ${total.toFixed(2).replace('.',',')}\n`;
-  if(mod==='sedex'){
-    const cep=document.getElementById('fCep').value.trim();
-    const rua=document.getElementById('fRua').value.trim();
-    const num=document.getElementById('fNum').value.trim();
-    const comp=document.getElementById('fComp').value.trim();
-    const bairro=document.getElementById('fBairro').value.trim();
-    const cidade=document.getElementById('fCidade').value.trim();
-    msg+=`\n📍 *Endereço:* ${rua}${num?', '+num:''}${comp?' - '+comp:''}, ${bairro}, ${cidade} — CEP: ${cep}\n`;
-  }else{
-    msg+=`\n📍 *Modalidade:* Retirada no Morumbi/SP\n`;
+  msg+=`\n📍 *Endereço:* ${rua}${num?', '+num:''}${comp?' - '+comp:''}, ${bairro}, ${cidade} — CEP: ${cep}\n`;
+  msg+=`\n💳 *Forma de pagamento:* ${formaPgto}\n`;
+  if(payTab==='credito'){
+    const parc=document.getElementById('ccParc').value;
+    msg+=`📊 *Parcelamento:* ${parc}x\n`;
   }
-  msg+=`\n💳 *Pagamento:* Pix — chave: 11920919983\n`;
   if(obs)msg+=`\n💬 *Obs:* ${obs}\n`;
-  msg+=`\n✅ Em breve enviarei o comprovante!`;
+  msg+=`\n✅ Aguardo confirmação!`;
   window.open(`https://wa.me/5511920919983?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
 function copiarPix(){navigator.clipboard.writeText('11920919983').then(()=>showToast('✓ Chave Pix copiada!')).catch(()=>showToast('Chave: 11920919983'));}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
 
 renderProducts();
 </script>
