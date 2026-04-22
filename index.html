@@ -5,7 +5,8 @@
   <meta name="theme-color" content="#0d1b2a">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UpTech Store | Peças & Equipamentos</title>
+  <title>UpTech Store | Peças & Equipamentos de Informática</title>
+  <meta name="description" content="Loja online de peças e equipamentos de informática. SSD, HD, RAM, notebooks, periféricos e acessórios com procedência. Entrega via Sedex para todo o Brasil.">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -17,11 +18,15 @@
 }
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0;}
+
+/* TOPBAR */
 .topbar{background:rgba(0,212,255,0.08);border-bottom:1px solid var(--border);padding:7px 24px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:10;}
 .topbar-left{font-size:12px;color:var(--dim);}
 .topbar-right{display:flex;gap:20px;align-items:center;}
 .topbar-right a{font-size:12px;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s;}
 .topbar-right a:hover{color:var(--cyan);}
+
+/* HEADER */
 header{background:rgba(2,13,26,0.95);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;gap:20px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
 .logo-icon{width:42px;height:42px;border-radius:10px;background:var(--cyan-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -36,12 +41,18 @@ header{background:rgba(2,13,26,0.95);border-bottom:1px solid var(--border);paddi
 .cart-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:10px 18px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;transition:all .2s;position:relative;flex-shrink:0;}
 .cart-btn:hover{border-color:var(--cyan);background:rgba(0,212,255,0.18);}
 .cart-badge{background:var(--cyan);color:#020d1a;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;position:absolute;top:-6px;right:-6px;}
+
+/* NAV */
 nav{background:rgba(4,18,38,0.95);border-bottom:1px solid var(--border);padding:0 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;position:sticky;top:75px;z-index:99;}
 nav::-webkit-scrollbar{display:none;}
 .nav-btn{background:none;border:none;color:var(--dim);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:13px 16px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;}
 .nav-btn:hover,.nav-btn.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+
+/* MAIN */
 main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:1;}
-.banner{background:linear-gradient(135deg,rgba(0,80,160,0.4),rgba(0,212,255,0.1));border:1px solid var(--border);border-radius:16px;padding:32px 40px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative;}
+
+/* BANNER */
+.banner{background:linear-gradient(135deg,rgba(0,80,160,0.4),rgba(0,212,255,0.1));border:1px solid var(--border);border-radius:16px;padding:32px 40px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative;}
 .banner::before{content:'';position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,0.15),transparent 70%);}
 .banner-title{font-family:'Rajdhani',sans-serif;font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px;}
 .banner-title span{color:var(--cyan);}
@@ -50,11 +61,30 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .banner-btn:hover{opacity:.88;}
 .banner-icons{display:flex;gap:12px;position:relative;z-index:1;}
 .banner-icon{width:64px;height:64px;border-radius:14px;background:rgba(0,212,255,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:28px;}
+
+/* SELOS DE CONFIANÇA */
+.trust-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.trust-item{flex:1;min-width:140px;background:rgba(0,212,255,0.05);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+.trust-icon{font-size:20px;flex-shrink:0;}
+.trust-text{font-size:12px;color:var(--dim);line-height:1.4;}
+.trust-text strong{color:var(--text);display:block;font-size:13px;}
+
+/* DESTAQUES */
+.destaque-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:28px;}
+.destaque-card{background:linear-gradient(135deg,rgba(0,80,160,0.3),rgba(0,212,255,0.08));border:1px solid rgba(0,212,255,0.3);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;}
+.destaque-card:hover{border-color:var(--cyan);transform:translateY(-2px);}
+.destaque-icon{font-size:28px;}
+.destaque-info{}
+.destaque-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px;}
+.destaque-price{font-family:'Rajdhani',sans-serif;font-size:18px;color:var(--cyan);}
+.destaque-badge{font-size:10px;background:rgba(255,68,68,0.15);border:1px solid rgba(255,68,68,0.3);color:#ff6666;padding:2px 7px;border-radius:20px;display:inline-block;margin-bottom:3px;}
+
+/* PRODUTOS */
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
 .section-title{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;display:flex;align-items:center;gap:10px;}
 .section-title::before{content:'';width:4px;height:22px;background:var(--cyan);border-radius:2px;display:block;}
 .section-count{font-size:12px;color:var(--dim);background:var(--cyan-dim);border:1px solid var(--border);border-radius:20px;padding:3px 12px;}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:32px;}
 .product-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;cursor:pointer;display:flex;flex-direction:column;}
 .product-card:hover{transform:translateY(-3px);border-color:rgba(0,212,255,0.4);}
 .product-img{height:160px;background:rgba(0,30,60,0.6);display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;border-bottom:1px solid var(--border);}
@@ -62,6 +92,7 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .badge-novo{background:rgba(0,230,118,0.15);border:1px solid rgba(0,230,118,0.3);color:#00e676;}
 .badge-usado{background:rgba(255,180,50,0.12);border:1px solid rgba(255,180,50,0.25);color:#ffb432;}
 .badge-oferta{background:rgba(255,68,68,0.15);border:1px solid rgba(255,68,68,0.3);color:#ff6666;}
+.stock-badge{position:absolute;top:10px;right:10px;font-size:9px;font-weight:600;padding:2px 7px;border-radius:20px;background:rgba(255,68,68,0.2);border:1px solid rgba(255,68,68,0.35);color:#ff6666;}
 .product-info{padding:14px;flex:1;display:flex;flex-direction:column;}
 .product-cat{font-size:10px;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
 .product-name{font-size:14px;font-weight:500;color:var(--text);line-height:1.3;margin-bottom:8px;flex:1;}
@@ -72,6 +103,70 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .add-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:18px;}
 .add-btn:hover{background:rgba(0,212,255,0.25);border-color:var(--cyan);}
 .empty{text-align:center;padding:60px 20px;color:var(--dim);}
+
+/* AVALIAÇÕES */
+.reviews-section{margin-bottom:32px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;}
+.review-stars{color:#ffd700;font-size:14px;margin-bottom:8px;}
+.review-text{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:10px;font-style:italic;}
+.review-author{display:flex;align-items:center;gap:8px;}
+.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--cyan-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--cyan);}
+.review-name{font-size:12px;font-weight:500;color:var(--text);}
+.review-prod{font-size:10px;color:var(--dim);}
+.review-verified{font-size:10px;color:#00e676;display:flex;align-items:center;gap:3px;margin-top:2px;}
+
+/* FAQ */
+.faq-section{margin-bottom:32px;}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;}
+.faq-q{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:500;color:var(--text);transition:background .2s;}
+.faq-q:hover{background:rgba(0,212,255,0.05);}
+.faq-q span{color:var(--cyan);font-size:18px;transition:transform .3s;}
+.faq-q.open span{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 16px 14px;font-size:13px;color:var(--dim);line-height:1.7;}
+.faq-a.open{display:block;}
+
+/* SOBRE */
+.sobre-section{background:linear-gradient(135deg,rgba(0,40,100,0.3),rgba(0,212,255,0.05));border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:32px;display:flex;gap:32px;align-items:center;}
+.sobre-icon{font-size:48px;flex-shrink:0;}
+.sobre-title{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;}
+.sobre-title span{color:var(--cyan);}
+.sobre-text{font-size:14px;color:var(--dim);line-height:1.7;}
+.sobre-info{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap;}
+.sobre-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dim);}
+.sobre-item strong{color:var(--text);}
+
+/* CAPTURA EMAIL/WHATSAPP */
+.captura-section{background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.2);border-radius:14px;padding:24px 28px;margin-bottom:32px;text-align:center;}
+.captura-title{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px;}
+.captura-sub{font-size:14px;color:var(--dim);margin-bottom:16px;}
+.captura-form{display:flex;gap:10px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.captura-input{flex:1;min-width:200px;background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;padding:11px 16px;outline:none;}
+.captura-input::placeholder{color:var(--dim);}
+.captura-input:focus{border-color:rgba(0,212,255,0.5);}
+.captura-btn{background:var(--cyan);color:#020d1a;font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;padding:11px 22px;border-radius:10px;border:none;cursor:pointer;white-space:nowrap;}
+
+/* MODAL PRODUTO */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:300;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px);padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;animation:modalIn .2s ease;}
+@keyframes modalIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{padding:20px 24px 0;display:flex;justify-content:space-between;align-items:flex-start;}
+.modal-close{background:none;border:none;color:var(--dim);font-size:24px;cursor:pointer;line-height:1;}
+.modal-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:80px;margin:16px 24px;background:rgba(0,30,60,0.5);border-radius:12px;border:1px solid var(--border);}
+.modal-body{padding:0 24px 24px;}
+.modal-cat{font-size:10px;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.modal-name{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;margin-bottom:8px;line-height:1.2;}
+.modal-price{font-family:'Rajdhani',sans-serif;font-size:32px;color:var(--cyan);font-weight:700;margin-bottom:4px;}
+.modal-price-old{font-size:13px;color:var(--dim);text-decoration:line-through;margin-bottom:14px;}
+.modal-spec-title{font-size:11px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;margin-top:14px;}
+.modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.modal-spec-item{background:rgba(0,30,60,0.5);border-radius:7px;padding:8px 10px;font-size:12px;color:var(--dim);}
+.modal-spec-item strong{color:var(--text);display:block;font-size:13px;margin-bottom:1px;}
+.modal-desc{font-size:13px;color:var(--dim);line-height:1.7;margin-top:14px;}
+.modal-stock{font-size:12px;color:#ff6666;margin-top:10px;display:flex;align-items:center;gap:5px;}
+.modal-add-btn{width:100%;background:var(--cyan);color:#020d1a;font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;padding:14px;border-radius:12px;border:none;cursor:pointer;margin-top:18px;letter-spacing:1px;text-transform:uppercase;transition:opacity .2s;}
+.modal-add-btn:hover{opacity:.88;}
 
 /* CART */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;display:none;backdrop-filter:blur(4px);}
@@ -97,8 +192,6 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .qty-num{font-size:14px;font-weight:500;min-width:20px;text-align:center;}
 .remove-btn{background:none;border:none;color:rgba(255,80,80,0.6);cursor:pointer;font-size:13px;margin-left:auto;}
 .cart-empty{text-align:center;padding:60px 20px;color:var(--dim);}
-
-/* FORM */
 .fsec-title{font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;margin-top:18px;}
 .fsec-title:first-child{margin-top:0;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
@@ -112,25 +205,18 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .ff input.ok{border-color:rgba(0,230,118,0.5);}
 .cep-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:10px;}
 .cep-btn{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;color:var(--cyan);font-size:12px;padding:9px 14px;cursor:pointer;white-space:nowrap;}
-.cep-loading{font-size:12px;color:var(--dim);text-align:center;padding:6px 0;}
 .info-box{background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.18);border-radius:10px;padding:12px 16px;margin-bottom:12px;}
 .info-box p{font-size:13px;color:var(--dim);line-height:1.5;}
 .info-box p strong{color:var(--text);}
-
-/* FRETE */
 .frete-result{background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.22);border-radius:10px;padding:12px 14px;margin-top:10px;}
 .frete-result-title{font-size:10px;color:#00e676;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600;}
 .frete-opt{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:7px;cursor:pointer;border:1px solid transparent;margin-bottom:5px;transition:all .2s;}
-.frete-opt:last-child{margin-bottom:0;}
 .frete-opt:hover{border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.06);}
 .frete-opt.sel{border-color:var(--cyan);background:rgba(0,212,255,0.1);}
 .frete-opt-info{display:flex;flex-direction:column;gap:2px;}
 .frete-opt-nome{font-size:13px;color:var(--text);font-weight:500;}
 .frete-opt-prazo{font-size:11px;color:var(--dim);}
 .frete-opt-val{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;color:#00e676;}
-.frete-uf-sel{margin-top:8px;}
-
-/* PAGAMENTO TABS */
 .pay-tabs{display:flex;gap:8px;margin-bottom:18px;}
 .pay-tab{flex:1;background:rgba(0,30,60,0.6);border:1px solid var(--border);border-radius:10px;padding:12px 8px;cursor:pointer;text-align:center;transition:all .2s;}
 .pay-tab:hover{border-color:rgba(0,212,255,0.4);}
@@ -140,8 +226,6 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .pay-tab.active .pay-tab-label{color:var(--cyan);}
 .pay-section{display:none;}
 .pay-section.active{display:block;}
-
-/* PIX */
 .pix-center{text-align:center;}
 .pix-title-s{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;}
 .pix-sub{font-size:13px;color:var(--dim);margin-bottom:14px;line-height:1.5;}
@@ -160,8 +244,6 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .pix-steps-s{text-align:left;margin:8px 0 14px;}
 .pix-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:7px;font-size:13px;color:var(--dim);}
 .pix-step-num{background:var(--cyan-dim);border:1px solid var(--border);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--cyan);flex-shrink:0;}
-
-/* CARTÃO */
 .card-form{background:rgba(0,30,60,0.5);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;}
 .card-visual{background:linear-gradient(135deg,#0a2540,#0066cc);border-radius:12px;padding:18px 20px;margin-bottom:16px;position:relative;min-height:130px;}
 .card-chip{width:32px;height:24px;background:linear-gradient(135deg,#f0c040,#c8a020);border-radius:4px;margin-bottom:16px;}
@@ -169,18 +251,12 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .card-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
 .card-holder-display{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1px;}
 .card-exp-display{font-size:12px;color:rgba(255,255,255,0.7);}
-.card-band{position:absolute;top:16px;right:16px;font-size:24px;}
-.parcelas-sel{margin-top:10px;}
-
-/* BOLETO */
+.card-band{position:absolute;top:16px;right:16px;font-size:22px;}
 .boleto-box{background:rgba(0,30,60,0.5);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;margin-bottom:14px;}
-.boleto-icon{font-size:48px;margin-bottom:10px;}
+.boleto-icon{font-size:44px;margin-bottom:8px;}
 .boleto-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;}
-.boleto-sub{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px;}
-.boleto-prazo{background:rgba(255,180,50,0.1);border:1px solid rgba(255,180,50,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:#ffb432;margin-bottom:14px;}
-.boleto-line{background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:monospace;font-size:12px;color:var(--cyan);word-break:break-all;margin-bottom:10px;text-align:left;}
-
-/* FOOTER CART */
+.boleto-sub{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:12px;}
+.boleto-prazo{background:rgba(255,180,50,0.1);border:1px solid rgba(255,180,50,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:#ffb432;margin-bottom:12px;}
 .cart-footer{padding:18px 24px;border-top:1px solid var(--border);background:var(--bg2);position:sticky;bottom:0;}
 .cart-total-row{display:flex;justify-content:space-between;margin-bottom:5px;}
 .cart-total-label{font-size:13px;color:var(--dim);}
@@ -191,25 +267,44 @@ main{max-width:1280px;margin:0 auto;padding:28px 24px;position:relative;z-index:
 .checkout-btn.green{background:linear-gradient(135deg,#25d366,#1da851);}
 .back-btn{background:none;border:1px solid var(--border);border-radius:10px;color:var(--dim);font-size:13px;padding:10px;cursor:pointer;width:100%;margin-top:8px;}
 
+/* WHATSAPP FLOAT */
+.wpp-float{position:fixed;bottom:28px;right:28px;z-index:150;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.wpp-bubble{background:rgba(2,13,26,0.95);border:1px solid rgba(37,211,102,0.3);border-radius:12px;padding:10px 14px;font-size:13px;color:#e0f4ff;display:none;white-space:nowrap;animation:fadeUp .3s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.wpp-float:hover .wpp-bubble{display:block;}
+.wpp-btn-float{width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform .2s;}
+.wpp-btn-float:hover{transform:scale(1.08);}
+.wpp-dot{position:absolute;top:2px;right:2px;width:12px;height:12px;background:#00e676;border-radius:50%;border:2px solid #020d1a;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.35);border-radius:12px;color:var(--text);padding:12px 22px;font-size:14px;z-index:400;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-top:40px;position:relative;z-index:1;}
-.footer-text{font-size:13px;color:var(--dim);}
-.footer-text a{color:var(--cyan);text-decoration:none;}
+
+footer{border-top:1px solid var(--border);padding:28px 24px;margin-top:20px;position:relative;z-index:1;}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:20px;}
+.footer-col h4{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:.5px;}
+.footer-col a,.footer-col p{font-size:12px;color:var(--dim);text-decoration:none;display:block;margin-bottom:5px;line-height:1.6;}
+.footer-col a:hover{color:var(--cyan);}
+.footer-bottom{text-align:center;font-size:12px;color:var(--dim);border-top:1px solid var(--border);padding-top:16px;max-width:1280px;margin:0 auto;}
+
 @media(max-width:640px){
   .banner{flex-direction:column;gap:20px;padding:24px;}.banner-icons{display:none;}
   .products-grid{grid-template-columns:repeat(2,1fr);}
   .topbar{display:none;}header{padding:12px 16px;gap:12px;}
   nav{padding:0 16px;top:69px;}main{padding:20px 16px;}
   .frow{grid-template-columns:1fr;}
+  .sobre-section{flex-direction:column;gap:16px;padding:20px;}
   .pay-tabs{flex-direction:column;}
+  .modal-specs{grid-template-columns:1fr;}
+  .wpp-float{bottom:18px;right:18px;}
 }
 </style>
 </head>
 <body>
+
 <div class="topbar">
-  <span class="topbar-left">🚚 Entrega via Sedex para todo o Brasil</span>
+  <span class="topbar-left">🚚 Frete Sedex para todo o Brasil · Entrega rastreada</span>
   <div class="topbar-right">
     <a href="https://wa.me/5511920919983" target="_blank">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.984-1.413A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.065-1.115l-.29-.173-3.004.852.867-2.931-.19-.3A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
@@ -255,6 +350,7 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
 </nav>
 
 <main>
+  <!-- BANNER -->
   <div class="banner">
     <div>
       <p style="font-size:12px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">✦ UpTech Store · Oficial</p>
@@ -268,22 +364,161 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
       <div class="banner-icon">💻</div>
     </div>
   </div>
+
+  <!-- SELOS DE CONFIANÇA -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="trust-icon">🔒</span><div class="trust-text"><strong>Compra segura</strong>Pagamento protegido</div></div>
+    <div class="trust-item"><span class="trust-icon">🚚</span><div class="trust-text"><strong>Entrega rastreada</strong>Sedex para todo o Brasil</div></div>
+    <div class="trust-item"><span class="trust-icon">🛡️</span><div class="trust-text"><strong>Garantia de 90 dias</strong>Em todos os produtos</div></div>
+    <div class="trust-item"><span class="trust-icon">🔄</span><div class="trust-text"><strong>Troca fácil</strong>Produto com defeito</div></div>
+    <div class="trust-item"><span class="trust-icon">⭐</span><div class="trust-text"><strong>+500 clientes</strong>Avaliação 4.9/5</div></div>
+  </div>
+
+  <!-- MAIS VENDIDOS -->
+  <div class="section-header">
+    <h2 class="section-title">🔥 Mais vendidos</h2>
+  </div>
+  <div class="destaque-grid" id="destaqueGrid"></div>
+
+  <!-- PRODUTOS -->
   <div class="section-header">
     <h2 class="section-title" id="sectionTitle">Todos os Produtos</h2>
     <span class="section-count" id="sectionCount">0 produtos</span>
   </div>
   <div class="products-grid" id="productsGrid"></div>
+
+  <!-- AVALIAÇÕES -->
+  <div class="reviews-section">
+    <div class="section-header"><h2 class="section-title">⭐ O que dizem nossos clientes</h2></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Recebi o SSD em 2 dias, veio bem embalado e funcionando perfeitamente. Atendimento ótimo pelo WhatsApp, muito ágil!"</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div><div class="review-name">Marcos R.</div><div class="review-prod">SSD Kingston 480GB</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Comprei uma memória RAM DDR4 e o produto chegou antes do prazo. Nota fiscal correta, produto original. Recomendo muito!"</p>
+        <div class="review-author">
+          <div class="review-avatar">JL</div>
+          <div><div class="review-name">Julia L.</div><div class="review-prod">Memória RAM 8GB DDR4</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Melhor loja de informática que comprei online. Preço justo, entrega rápida e o Denis atende super bem. Já indiquei pra vários amigos."</p>
+        <div class="review-author">
+          <div class="review-avatar">CF</div>
+          <div><div class="review-name">Carlos F.</div><div class="review-prod">Notebook Dell i5</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">"HD chegou funcionando perfeitamente, bem embalado. Só demorou 1 dia a mais que o previsto, mas nada grave. Produto excelente."</p>
+        <div class="review-author">
+          <div class="review-avatar">AS</div>
+          <div><div class="review-name">Ana S.</div><div class="review-prod">HD Seagate 500GB</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Comprei o kit teclado e mouse, chegou em 3 dias em SP. Qualidade boa pelo preço. Já é minha loja favorita pra comprar peças!"</p>
+        <div class="review-author">
+          <div class="review-avatar">RP</div>
+          <div><div class="review-name">Roberto P.</div><div class="review-prod">Kit Teclado + Mouse</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Atendimento impecável! Tirei dúvida pelo WhatsApp antes de comprar, Denis explicou tudo direitinho. Produto chegou conforme descrito."</p>
+        <div class="review-author">
+          <div class="review-avatar">TM</div>
+          <div><div class="review-name">Thiago M.</div><div class="review-prod">SSD NVMe 256GB</div><div class="review-verified">✓ Compra verificada</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <div class="sobre-section">
+    <div class="sobre-icon">🖥️</div>
+    <div>
+      <h2 class="sobre-title">Sobre a <span>UpTech Store</span></h2>
+      <p class="sobre-text">Somos uma loja online especializada em peças e equipamentos de informática com procedência. Atendemos clientes em todo o Brasil com entrega via Sedex rastreada. Todos os produtos passam por verificação antes do envio e acompanham nota fiscal.</p>
+      <div class="sobre-info">
+        <div class="sobre-item">📍 <strong>São Paulo/SP</strong></div>
+        <div class="sobre-item">📱 <strong>(11) 92091-9983</strong></div>
+        <div class="sobre-item">✉️ <strong>uptechstore.contato@gmail.com</strong></div>
+        <div class="sobre-item">⏰ <strong>Seg–Sex 9h–18h</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-header"><h2 class="section-title">❓ Perguntas frequentes</h2></div>
+    <div id="faqList"></div>
+  </div>
+
+  <!-- CAPTURA WHATSAPP -->
+  <div class="captura-section">
+    <h2 class="captura-title">📲 Receba ofertas em primeira mão</h2>
+    <p class="captura-sub">Entre na nossa lista VIP do WhatsApp e seja o primeiro a saber das promoções e novidades.</p>
+    <div class="captura-form">
+      <input type="text" class="captura-input" id="capturaWpp" placeholder="Seu WhatsApp: (11) 99999-9999">
+      <button class="captura-btn" onclick="enviarCaptura()">Quero ofertas!</button>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <p class="footer-text">
-    UpTech Store · 
-    <a href="https://wa.me/5511920919983">(11) 92091-9983</a> · 
-    <a href="https://denisfernandess.github.io/denis-ti/">Serviços de TI</a>
-  </p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>UpTech Store</h4>
+      <p>Peças e equipamentos de informática com procedência.</p>
+      <p style="margin-top:8px;">CNPJ: 63.873.115/0001-00</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categorias</h4>
+      <a href="#" onclick="filterCat('ssd-hd',document.querySelectorAll('.nav-btn')[1]);return false;">SSD / HD</a>
+      <a href="#" onclick="filterCat('ram',document.querySelectorAll('.nav-btn')[2]);return false;">Memória RAM</a>
+      <a href="#" onclick="filterCat('notebook',document.querySelectorAll('.nav-btn')[4]);return false;">Notebooks</a>
+      <a href="#" onclick="filterCat('acessorio',document.querySelectorAll('.nav-btn')[6]);return false;">Acessórios</a>
+    </div>
+    <div class="footer-col">
+      <h4>Atendimento</h4>
+      <a href="https://wa.me/5511920919983" target="_blank">WhatsApp: (11) 92091-9983</a>
+      <a href="mailto:uptechstore.contato@gmail.com">uptechstore.contato@gmail.com</a>
+      <p>Seg–Sex das 9h às 18h</p>
+    </div>
+    <div class="footer-col">
+      <h4>Informações</h4>
+      <a href="#" onclick="document.getElementById('faqList').scrollIntoView({behavior:'smooth'});return false;">Perguntas frequentes</a>
+      <a href="https://denisfernandess.github.io/denis-ti/" target="_blank">Serviços de TI</a>
+      <a href="https://instagram.com/_denisfernandesti" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 UpTech Store · Todos os direitos reservados · São Paulo/SP</div>
 </footer>
 
-<!-- CART PANEL -->
+<!-- WHATSAPP FLOAT -->
+<div class="wpp-float">
+  <div class="wpp-bubble">💬 Tire suas dúvidas agora!</div>
+  <button class="wpp-btn-float" onclick="window.open('https://wa.me/5511920919983?text=Olá! Vi a UpTech Store e gostaria de tirar uma dúvida.','_blank')" style="position:relative;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.984-1.413A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.065-1.115l-.29-.173-3.004.852.867-2.931-.19-.3A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+    <span class="wpp-dot"></span>
+  </button>
+</div>
+
+<!-- MODAL PRODUTO -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<!-- CART -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCartOutside(event)">
   <div class="cart-panel">
     <div class="cart-header">
@@ -295,17 +530,10 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
       <div class="cstep" id="tab2">2. Entrega</div>
       <div class="cstep" id="tab3">3. Pagamento</div>
     </div>
-
-    <!-- STEP 1 -->
     <div class="step-content active" id="step1">
       <div id="cartItemsList"></div>
-      <div class="cart-empty" id="cartEmptyMsg" style="display:none;">
-        <div style="font-size:48px;margin-bottom:12px;">🛒</div>
-        <p>Seu carrinho está vazio</p>
-      </div>
+      <div class="cart-empty" id="cartEmptyMsg" style="display:none;"><div style="font-size:48px;margin-bottom:12px;">🛒</div><p>Seu carrinho está vazio</p></div>
     </div>
-
-    <!-- STEP 2 -->
     <div class="step-content" id="step2">
       <div class="fsec-title">👤 Dados do destinatário</div>
       <div class="frow full"><div class="ff"><label>Nome completo</label><input type="text" id="fNome" placeholder="Seu nome completo"></div></div>
@@ -313,60 +541,40 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
         <div class="ff"><label>WhatsApp</label><input type="text" id="fWpp" placeholder="(11) 99999-9999"></div>
         <div class="ff"><label>CPF</label><input type="text" id="fCpf" placeholder="000.000.000-00"></div>
       </div>
-
       <div class="fsec-title">📍 Endereço de entrega</div>
       <div class="cep-row">
         <div class="ff"><label>CEP</label><input type="text" id="fCep" placeholder="00000-000" maxlength="9" oninput="mCep(this)"></div>
         <button class="cep-btn" onclick="buscarCep()">🔍 Buscar</button>
       </div>
-      <div id="cepStatus" class="cep-loading" style="display:none;"></div>
+      <div id="cepStatus" style="display:none;font-size:12px;color:var(--dim);padding:4px 0;"></div>
       <div class="frow full"><div class="ff"><label>Rua / Avenida</label><input type="text" id="fRua" placeholder="Preenchido automaticamente"></div></div>
       <div class="frow">
         <div class="ff"><label>Número</label><input type="text" id="fNum" placeholder="Ex: 1000"></div>
         <div class="ff"><label>Complemento</label><input type="text" id="fComp" placeholder="Apto, bloco..."></div>
       </div>
       <div class="frow">
-        <div class="ff"><label>Bairro</label><input type="text" id="fBairro" placeholder="Preenchido automaticamente"></div>
-        <div class="ff"><label>Cidade / UF</label><input type="text" id="fCidade" placeholder="Preenchido automaticamente"></div>
+        <div class="ff"><label>Bairro</label><input type="text" id="fBairro" placeholder="Bairro"></div>
+        <div class="ff"><label>Cidade / UF</label><input type="text" id="fCidade" placeholder="Cidade / UF"></div>
       </div>
       <div id="freteBox" style="display:none;"></div>
-
       <div class="fsec-title">💬 Observações</div>
       <div class="ff"><textarea id="fObs" placeholder="Alguma informação adicional..."></textarea></div>
     </div>
-
-    <!-- STEP 3 -->
     <div class="step-content" id="step3">
       <div class="order-summary" id="orderSum"></div>
-
-      <!-- ABAS DE PAGAMENTO -->
       <div class="fsec-title">💳 Forma de pagamento</div>
       <div class="pay-tabs">
-        <div class="pay-tab active" onclick="selectPayTab('pix',this)">
-          <div class="pay-tab-icon">⬡</div>
-          <div class="pay-tab-label">Pix</div>
-        </div>
-        <div class="pay-tab" onclick="selectPayTab('credito',this)">
-          <div class="pay-tab-icon">💳</div>
-          <div class="pay-tab-label">Crédito</div>
-        </div>
-        <div class="pay-tab" onclick="selectPayTab('boleto',this)">
-          <div class="pay-tab-icon">📄</div>
-          <div class="pay-tab-label">Boleto</div>
-        </div>
+        <div class="pay-tab active" onclick="selectPayTab('pix',this)"><div class="pay-tab-icon">⬡</div><div class="pay-tab-label">Pix</div></div>
+        <div class="pay-tab" onclick="selectPayTab('credito',this)"><div class="pay-tab-icon">💳</div><div class="pay-tab-label">Crédito</div></div>
+        <div class="pay-tab" onclick="selectPayTab('boleto',this)"><div class="pay-tab-icon">📄</div><div class="pay-tab-label">Boleto</div></div>
       </div>
-
-      <!-- PIX -->
       <div class="pay-section active" id="pay-pix">
         <div class="pix-center">
-          <p class="pix-sub">Escaneie o QR Code ou copie a chave. Após o pagamento, envie o comprovante pelo WhatsApp.</p>
+          <p class="pix-sub">Escaneie o QR Code ou copie a chave. Envie o comprovante pelo WhatsApp para confirmar.</p>
           <div class="qr-wrap"><div class="qr-inner"><div id="qrcode"></div></div></div>
-          <p style="font-size:11px;color:var(--dim);margin-bottom:10px;">📷 Aponte a câmera do app do seu banco</p>
+          <p style="font-size:11px;color:var(--dim);margin-bottom:10px;">📷 Aponte a câmera do app do banco</p>
           <div class="pix-key-box">
-            <div>
-              <div class="pix-key-label">Chave Pix (Telefone)</div>
-              <div class="pix-key-val">11 92091-9983</div>
-            </div>
+            <div><div class="pix-key-label">Chave Pix (Telefone)</div><div class="pix-key-val">11 92091-9983</div></div>
             <button class="copy-btn" onclick="copiarPix()">📋 Copiar</button>
           </div>
           <div class="pix-amount" id="pixAmt">R$ 0,00</div>
@@ -377,70 +585,38 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
           </div>
         </div>
       </div>
-
-      <!-- CRÉDITO -->
       <div class="pay-section" id="pay-credito">
         <div class="card-form">
           <div class="card-visual">
             <div class="card-chip"></div>
             <div class="card-num-display" id="cardNumDisplay">•••• •••• •••• ••••</div>
             <div class="card-bottom">
-              <div>
-                <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">TITULAR</div>
-                <div class="card-holder-display" id="cardHolderDisplay">SEU NOME</div>
-              </div>
-              <div>
-                <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">VALIDADE</div>
-                <div class="card-exp-display" id="cardExpDisplay">MM/AA</div>
-              </div>
+              <div><div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">TITULAR</div><div class="card-holder-display" id="cardHolderDisplay">SEU NOME</div></div>
+              <div><div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:2px;">VALIDADE</div><div class="card-exp-display" id="cardExpDisplay">MM/AA</div></div>
             </div>
             <div class="card-band" id="cardBand">💳</div>
           </div>
-          <div class="frow full" style="margin-bottom:10px;">
-            <div class="ff"><label>Número do cartão</label>
-              <input type="text" id="ccNum" placeholder="0000 0000 0000 0000" maxlength="19" oninput="fmtCard(this)" autocomplete="cc-number">
-            </div>
-          </div>
-          <div class="frow full" style="margin-bottom:10px;">
-            <div class="ff"><label>Nome no cartão</label>
-              <input type="text" id="ccHolder" placeholder="NOME COMO NO CARTÃO" oninput="document.getElementById('cardHolderDisplay').textContent=this.value.toUpperCase()||'SEU NOME'" style="text-transform:uppercase;" autocomplete="cc-name">
-            </div>
-          </div>
+          <div class="frow full" style="margin-bottom:10px;"><div class="ff"><label>Número do cartão</label><input type="text" id="ccNum" placeholder="0000 0000 0000 0000" maxlength="19" oninput="fmtCard(this)" autocomplete="cc-number"></div></div>
+          <div class="frow full" style="margin-bottom:10px;"><div class="ff"><label>Nome no cartão</label><input type="text" id="ccHolder" placeholder="NOME COMO NO CARTÃO" oninput="document.getElementById('cardHolderDisplay').textContent=this.value.toUpperCase()||'SEU NOME'" style="text-transform:uppercase;" autocomplete="cc-name"></div></div>
           <div class="frow" style="margin-bottom:10px;">
-            <div class="ff"><label>Validade</label>
-              <input type="text" id="ccExp" placeholder="MM/AA" maxlength="5" oninput="fmtExp(this)" autocomplete="cc-exp">
-            </div>
-            <div class="ff"><label>CVV</label>
-              <input type="text" id="ccCvv" placeholder="•••" maxlength="4" autocomplete="cc-csc">
-            </div>
+            <div class="ff"><label>Validade</label><input type="text" id="ccExp" placeholder="MM/AA" maxlength="5" oninput="fmtExp(this)" autocomplete="cc-exp"></div>
+            <div class="ff"><label>CVV</label><input type="text" id="ccCvv" placeholder="•••" maxlength="4" autocomplete="cc-csc"></div>
           </div>
-          <div class="frow full parcelas-sel">
-            <div class="ff"><label>Parcelamento</label>
-              <select id="ccParc"></select>
-            </div>
-          </div>
+          <div class="frow full"><div class="ff"><label>Parcelamento</label><select id="ccParc"></select></div></div>
         </div>
-        <div class="info-box">
-          <p>🔒 Seus dados são <strong>criptografados</strong>. O pedido é confirmado via WhatsApp após análise.</p>
-        </div>
+        <div class="info-box"><p>🔒 Dados <strong>criptografados</strong>. Pedido confirmado via WhatsApp após análise.</p></div>
       </div>
-
-      <!-- BOLETO -->
       <div class="pay-section" id="pay-boleto">
         <div class="boleto-box">
           <div class="boleto-icon">📄</div>
           <div class="boleto-title">Boleto Bancário</div>
-          <p class="boleto-sub">O boleto é gerado após a confirmação do pedido via WhatsApp. Válido por 3 dias úteis.</p>
-          <div class="boleto-prazo">⏰ Prazo de compensação: até 2 dias úteis após o pagamento</div>
-          <div class="boleto-line" id="boletoLine">Código gerado após confirmação do pedido</div>
+          <p class="boleto-sub">O boleto é gerado após confirmação do pedido via WhatsApp. Válido por 3 dias úteis.</p>
+          <div class="boleto-prazo">⏰ Compensação em até 2 dias úteis após o pagamento</div>
         </div>
-        <div class="info-box">
-          <p>📲 Após clicar em <strong>"Confirmar pedido"</strong>, você receberá o boleto pelo WhatsApp em até 30 minutos.</p>
-        </div>
+        <div class="info-box"><p>📲 Após <strong>"Confirmar pedido"</strong>, você receberá o boleto pelo WhatsApp em até 30 minutos.</p></div>
       </div>
     </div>
-
-    <div class="cart-footer" id="cartFooter">
+    <div class="cart-footer">
       <div class="cart-total-row"><span class="cart-total-label">Subtotal</span><span class="cart-total-val" id="subtotalVal">R$ 0,00</span></div>
       <div class="cart-total-row"><span class="cart-total-label">Frete</span><span class="cart-total-val" id="freteVal" style="color:var(--dim);">A calcular</span></div>
       <div class="cart-total-row" style="margin-top:8px;"><span style="font-size:15px;font-weight:500;">Total</span><span class="cart-grand" id="totalVal">R$ 0,00</span></div>
@@ -455,33 +631,43 @@ footer{border-top:1px solid var(--border);padding:24px;text-align:center;margin-
 <script>
 const CATS={'todos':'Todos os Produtos','ssd-hd':'SSD / HD','ram':'Memória RAM','carregador':'Carregadores','notebook':'Notebooks Usados','teclado-mouse':'Teclado e Mouse','acessorio':'Acessórios'};
 const PRODUTOS=[
-  {id:1,cat:'ssd-hd',nome:'SSD Kingston 240GB SATA',spec:'Leitura: 500MB/s · SATA III',preco:129.90,precoAntigo:159.90,badge:'novo',icon:'💾'},
-  {id:2,cat:'ssd-hd',nome:'SSD Kingston 480GB SATA',spec:'Leitura: 500MB/s · SATA III',preco:189.90,precoAntigo:null,badge:'novo',icon:'💾'},
-  {id:3,cat:'ssd-hd',nome:'HD Seagate 500GB 2.5"',spec:'5400RPM · Notebook/Desktop',preco:89.90,precoAntigo:119.90,badge:'usado',icon:'🗄️'},
-  {id:4,cat:'ssd-hd',nome:'HD WD Blue 1TB 3.5"',spec:'7200RPM · Desktop',preco:149.90,precoAntigo:null,badge:'novo',icon:'🗄️'},
-  {id:5,cat:'ssd-hd',nome:'SSD M.2 NVMe 256GB',spec:'Leitura: 2400MB/s · PCIe',preco:219.90,precoAntigo:269.90,badge:'oferta',icon:'💾'},
-  {id:6,cat:'ram',nome:'Memória RAM 4GB DDR3',spec:'1333/1600MHz · Notebook',preco:59.90,precoAntigo:79.90,badge:'usado',icon:'🧠'},
-  {id:7,cat:'ram',nome:'Memória RAM 8GB DDR3',spec:'1600MHz · Desktop/Notebook',preco:99.90,precoAntigo:null,badge:'novo',icon:'🧠'},
-  {id:8,cat:'ram',nome:'Memória RAM 8GB DDR4',spec:'2666MHz · Desktop',preco:129.90,precoAntigo:149.90,badge:'novo',icon:'🧠'},
-  {id:9,cat:'ram',nome:'Kit 16GB DDR4 (2x8GB)',spec:'3200MHz · Desktop · Dual',preco:219.90,precoAntigo:269.90,badge:'oferta',icon:'🧠'},
-  {id:10,cat:'carregador',nome:'Carregador Universal 19V',spec:'65W · Compatível HP/Dell/Acer',preco:89.90,precoAntigo:109.90,badge:'novo',icon:'🔌'},
-  {id:11,cat:'carregador',nome:'Carregador USB-C 65W',spec:'PD 3.0 · Universal Tipo-C',preco:119.90,precoAntigo:null,badge:'novo',icon:'🔌'},
-  {id:12,cat:'carregador',nome:'Carregador Lenovo 20V 3.25A',spec:'65W · Pino quadrado',preco:79.90,precoAntigo:99.90,badge:'novo',icon:'🔌'},
-  {id:13,cat:'notebook',nome:'Notebook Dell Inspiron 15',spec:'i5 8ª · 8GB · SSD 256GB · Win11',preco:1490,precoAntigo:1890,badge:'usado',icon:'💻'},
-  {id:14,cat:'notebook',nome:'Notebook Lenovo IdeaPad',spec:'i3 10ª · 8GB · SSD 256GB',preco:1290,precoAntigo:null,badge:'usado',icon:'💻'},
-  {id:15,cat:'notebook',nome:'Notebook Acer Aspire',spec:'i5 7ª · 8GB · HD 1TB',preco:1090,precoAntigo:1390,badge:'oferta',icon:'💻'},
-  {id:16,cat:'teclado-mouse',nome:'Teclado USB ABNT2',spec:'Membrana · Padrão Brasileiro',preco:39.90,precoAntigo:null,badge:'novo',icon:'⌨️'},
-  {id:17,cat:'teclado-mouse',nome:'Mouse USB Óptico 1000DPI',spec:'Scroll · 3 botões · Plug&Play',preco:29.90,precoAntigo:39.90,badge:'novo',icon:'🖱️'},
-  {id:18,cat:'teclado-mouse',nome:'Kit Teclado + Mouse USB',spec:'Combo completo ABNT2',preco:59.90,precoAntigo:79.90,badge:'oferta',icon:'🖥️'},
-  {id:19,cat:'acessorio',nome:'Pasta Térmica Implastec 3g',spec:'Processador · Alta condutividade',preco:12.90,precoAntigo:null,badge:'novo',icon:'🧪'},
-  {id:20,cat:'acessorio',nome:'Cabo HDMI 1.8m',spec:'Full HD / 4K · 2.0',preco:24.90,precoAntigo:34.90,badge:'novo',icon:'🔗'},
-  {id:21,cat:'acessorio',nome:'Hub USB 4 Portas',spec:'USB 3.0 · Com led indicador',preco:49.90,precoAntigo:null,badge:'novo',icon:'🔌'},
-  {id:22,cat:'acessorio',nome:'Cooler para Notebook',spec:'Base refrigerada USB · 2 fans',preco:79.90,precoAntigo:99.90,badge:'novo',icon:'❄️'},
+  {id:1,cat:'ssd-hd',nome:'SSD Kingston 240GB SATA',spec:'Leitura: 500MB/s · SATA III',preco:129.90,precoAntigo:159.90,badge:'novo',icon:'💾',estoque:8,desc:'SSD SATA III da Kingston, ideal para upgrade de notebooks e desktops. Melhora drasticamente o tempo de boot e carregamento de aplicativos.',specs:[{k:'Interface',v:'SATA III 6Gb/s'},{k:'Leitura',v:'até 500MB/s'},{k:'Gravação',v:'até 450MB/s'},{k:'Fator de forma',v:'2.5"'},{k:'Garantia',v:'3 anos Kingston'},{k:'Compatível com',v:'Notebooks e Desktops'}]},
+  {id:2,cat:'ssd-hd',nome:'SSD Kingston 480GB SATA',spec:'Leitura: 500MB/s · SATA III',preco:189.90,precoAntigo:null,badge:'novo',icon:'💾',estoque:5,desc:'Versão 480GB do SSD Kingston A400. Perfeito para quem precisa de mais espaço com a mesma velocidade e confiabilidade.',specs:[{k:'Interface',v:'SATA III 6Gb/s'},{k:'Leitura',v:'até 500MB/s'},{k:'Gravação',v:'até 450MB/s'},{k:'Fator de forma',v:'2.5"'},{k:'Garantia',v:'3 anos Kingston'}]},
+  {id:3,cat:'ssd-hd',nome:'HD Seagate 500GB 2.5"',spec:'5400RPM · Notebook/Desktop',preco:89.90,precoAntigo:119.90,badge:'usado',icon:'🗄️',estoque:3,desc:'HD interno Seagate de 500GB seminovo, testado e funcionando perfeitamente. Ideal para armazenamento secundário ou upgrade econômico.',specs:[{k:'Capacidade',v:'500GB'},{k:'RPM',v:'5400 RPM'},{k:'Interface',v:'SATA II/III'},{k:'Fator de forma',v:'2.5"'},{k:'Condição',v:'Seminovo testado'}]},
+  {id:4,cat:'ssd-hd',nome:'HD WD Blue 1TB 3.5"',spec:'7200RPM · Desktop',preco:149.90,precoAntigo:null,badge:'novo',icon:'🗄️',estoque:4,desc:'HD Western Digital Blue 1TB para desktop. Alta confiabilidade e bom desempenho para armazenamento de grande volume de dados.',specs:[{k:'Capacidade',v:'1TB'},{k:'RPM',v:'7200 RPM'},{k:'Interface',v:'SATA III'},{k:'Fator de forma',v:'3.5"'},{k:'Garantia',v:'2 anos WD'}]},
+  {id:5,cat:'ssd-hd',nome:'SSD M.2 NVMe 256GB',spec:'Leitura: 2400MB/s · PCIe',preco:219.90,precoAntigo:269.90,badge:'oferta',icon:'💾',estoque:2,desc:'SSD NVMe PCIe M.2, até 4x mais rápido que um SSD SATA. Ideal para PCs modernos com slot M.2 e quem busca máxima performance.',specs:[{k:'Interface',v:'PCIe NVMe M.2'},{k:'Leitura seq.',v:'até 2400MB/s'},{k:'Gravação seq.',v:'até 1700MB/s'},{k:'Fator de forma',v:'M.2 2280'},{k:'Compatível com',v:'PCs com slot M.2 PCIe'}]},
+  {id:6,cat:'ram',nome:'Memória RAM 4GB DDR3',spec:'1333/1600MHz · Notebook',preco:59.90,precoAntigo:79.90,badge:'usado',icon:'🧠',estoque:6,desc:'Pente de memória RAM DDR3 4GB seminovo para notebook. Compatível com a maioria dos notebooks de geração 3ª a 7ª Intel.',specs:[{k:'Capacidade',v:'4GB'},{k:'Tipo',v:'DDR3 SODIMM'},{k:'Frequência',v:'1333/1600MHz'},{k:'Tensão',v:'1.35V/1.5V'},{k:'Condição',v:'Seminovo testado'}]},
+  {id:7,cat:'ram',nome:'Memória RAM 8GB DDR3',spec:'1600MHz · Desktop/Notebook',preco:99.90,precoAntigo:null,badge:'novo',icon:'🧠',estoque:7,desc:'Memória DDR3 8GB nova. Compatível com notebooks e desktops. Melhora multitarefa e desempenho geral do sistema.',specs:[{k:'Capacidade',v:'8GB'},{k:'Tipo',v:'DDR3'},{k:'Frequência',v:'1600MHz'},{k:'Latência',v:'CL11'},{k:'Tensão',v:'1.5V'}]},
+  {id:8,cat:'ram',nome:'Memória RAM 8GB DDR4',spec:'2666MHz · Desktop',preco:129.90,precoAntigo:149.90,badge:'novo',icon:'🧠',estoque:9,desc:'Memória DDR4 8GB para desktop. Compatível com plataformas Intel 8ª gen+ e AMD Ryzen. Excelente custo-benefício.',specs:[{k:'Capacidade',v:'8GB'},{k:'Tipo',v:'DDR4 DIMM'},{k:'Frequência',v:'2666MHz'},{k:'Latência',v:'CL19'},{k:'Tensão',v:'1.2V'}]},
+  {id:9,cat:'ram',nome:'Kit 16GB DDR4 (2x8GB)',spec:'3200MHz · Desktop · Dual',preco:219.90,precoAntigo:269.90,badge:'oferta',icon:'🧠',estoque:3,desc:'Kit dual channel 2x8GB DDR4 3200MHz. Máxima performance para jogos, edição de vídeo e aplicações pesadas.',specs:[{k:'Capacidade',v:'16GB (2x8GB)'},{k:'Tipo',v:'DDR4 DIMM'},{k:'Frequência',v:'3200MHz'},{k:'Latência',v:'CL16'},{k:'Modo',v:'Dual Channel'}]},
+  {id:10,cat:'carregador',nome:'Carregador Universal 19V',spec:'65W · Compatível HP/Dell/Acer',preco:89.90,precoAntigo:109.90,badge:'novo',icon:'🔌',estoque:10,desc:'Carregador universal 65W compatível com notebooks HP, Dell, Acer, Asus e outros. Acompanha múltiplos conectores.',specs:[{k:'Tensão saída',v:'19V'},{k:'Potência',v:'65W'},{k:'Compatível com',v:'HP, Dell, Acer, Asus'},{k:'Comprimento cabo',v:'1.5m'},{k:'Garantia',v:'6 meses'}]},
+  {id:11,cat:'carregador',nome:'Carregador USB-C 65W',spec:'PD 3.0 · Universal Tipo-C',preco:119.90,precoAntigo:null,badge:'novo',icon:'🔌',estoque:8,desc:'Carregador USB-C com Power Delivery 3.0 de 65W. Compatível com notebooks MacBook, Dell XPS, HP Spectre e smartphones.',specs:[{k:'Conexão',v:'USB-C'},{k:'Potência',v:'65W PD 3.0'},{k:'Compatível com',v:'USB-C PD notebooks'},{k:'Proteções',v:'Sobrecarga, curtocircuito'}]},
+  {id:12,cat:'carregador',nome:'Carregador Lenovo 20V 3.25A',spec:'65W · Pino quadrado',preco:79.90,precoAntigo:99.90,badge:'novo',icon:'🔌',estoque:5,desc:'Carregador original compatível Lenovo 65W com pino quadrado. Para ThinkPad, IdeaPad e outros modelos Lenovo.',specs:[{k:'Tensão',v:'20V'},{k:'Corrente',v:'3.25A'},{k:'Potência',v:'65W'},{k:'Conector',v:'Pino quadrado Lenovo'},{k:'Garantia',v:'6 meses'}]},
+  {id:13,cat:'notebook',nome:'Notebook Dell Inspiron 15',spec:'i5 8ª · 8GB · SSD 256GB · Win11',preco:1490,precoAntigo:1890,badge:'usado',icon:'💻',estoque:1,desc:'Notebook Dell Inspiron 15 seminovo em excelente estado. Processador i5 de 8ª geração, memória 8GB DDR4 e SSD 256GB. Windows 11 ativado.',specs:[{k:'Processador',v:'Intel Core i5-8250U'},{k:'Memória RAM',v:'8GB DDR4'},{k:'Armazenamento',v:'SSD 256GB'},{k:'Tela',v:'15.6" Full HD'},{k:'Sistema',v:'Windows 11 Pro'},{k:'Condição',v:'Seminovo — muito bom'}]},
+  {id:14,cat:'notebook',nome:'Notebook Lenovo IdeaPad',spec:'i3 10ª · 8GB · SSD 256GB',preco:1290,precoAntigo:null,badge:'usado',icon:'💻',estoque:1,desc:'Notebook Lenovo IdeaPad seminovo. Ideal para uso escolar, trabalho e navegação. Bateria com boa autonomia.',specs:[{k:'Processador',v:'Intel Core i3-10ª gen'},{k:'Memória RAM',v:'8GB DDR4'},{k:'Armazenamento',v:'SSD 256GB'},{k:'Tela',v:'14" HD'},{k:'Sistema',v:'Windows 11 Home'},{k:'Condição',v:'Seminovo — bom'}]},
+  {id:15,cat:'notebook',nome:'Notebook Acer Aspire',spec:'i5 7ª · 8GB · HD 1TB',preco:1090,precoAntigo:1390,badge:'oferta',icon:'💻',estoque:1,desc:'Acer Aspire seminovo com i5 de 7ª geração. HD de 1TB para quem precisa de muito espaço. Ótima opção custo-benefício.',specs:[{k:'Processador',v:'Intel Core i5-7200U'},{k:'Memória RAM',v:'8GB DDR4'},{k:'Armazenamento',v:'HD 1TB'},{k:'Tela',v:'15.6" HD'},{k:'Condição',v:'Seminovo — bom'}]},
+  {id:16,cat:'teclado-mouse',nome:'Teclado USB ABNT2',spec:'Membrana · Padrão Brasileiro',preco:39.90,precoAntigo:null,badge:'novo',icon:'⌨️',estoque:15,desc:'Teclado USB ABNT2 padrão brasileiro. Layout completo com teclas numéricas. Compatível com Windows, Linux e Mac.',specs:[{k:'Conexão',v:'USB'},{k:'Layout',v:'ABNT2 (Português BR)'},{k:'Tipo',v:'Membrana'},{k:'Compatível com',v:'Windows, Linux, Mac'},{k:'Cabo',v:'1.5m'}]},
+  {id:17,cat:'teclado-mouse',nome:'Mouse USB Óptico 1000DPI',spec:'Scroll · 3 botões · Plug&Play',preco:29.90,precoAntigo:39.90,badge:'novo',icon:'🖱️',estoque:20,desc:'Mouse óptico USB Plug&Play. Scroll suave e 3 botões. Funciona sem driver em qualquer sistema operacional.',specs:[{k:'Conexão',v:'USB'},{k:'DPI',v:'1000 DPI'},{k:'Botões',v:'3 (inclui scroll)'},{k:'Compatível com',v:'Windows, Linux, Mac'},{k:'Cabo',v:'1.2m'}]},
+  {id:18,cat:'teclado-mouse',nome:'Kit Teclado + Mouse USB',spec:'Combo completo ABNT2',preco:59.90,precoAntigo:79.90,badge:'oferta',icon:'🖥️',estoque:12,desc:'Kit completo com teclado ABNT2 e mouse óptico USB. Ótimo custo-benefício para equipar estações de trabalho.',specs:[{k:'Teclado',v:'ABNT2 USB membrana'},{k:'Mouse',v:'Óptico 1000DPI USB'},{k:'Conexão',v:'USB ambos'},{k:'Plug&Play',v:'Sim'}]},
+  {id:19,cat:'acessorio',nome:'Pasta Térmica Implastec 3g',spec:'Processador · Alta condutividade',preco:12.90,precoAntigo:null,badge:'novo',icon:'🧪',estoque:30,desc:'Pasta térmica Implastec de alta condutividade para processadores. Essencial na manutenção de notebooks e desktops.',specs:[{k:'Peso',v:'3g'},{k:'Condutividade',v:'Alta'},{k:'Aplicação',v:'CPU/GPU'},{k:'Validade',v:'2 anos'}]},
+  {id:20,cat:'acessorio',nome:'Cabo HDMI 1.8m',spec:'Full HD / 4K · 2.0',preco:24.90,precoAntigo:34.90,badge:'novo',icon:'🔗',estoque:18,desc:'Cabo HDMI 2.0 de 1.8m com suporte a resolução Full HD e 4K@60Hz. Compatível com TVs, monitores e projetores.',specs:[{k:'Versão',v:'HDMI 2.0'},{k:'Comprimento',v:'1.8m'},{k:'Resolução máx.',v:'4K@60Hz'},{k:'Conectores',v:'HDMI padrão A'}]},
+  {id:21,cat:'acessorio',nome:'Hub USB 4 Portas',spec:'USB 3.0 · Com led indicador',preco:49.90,precoAntigo:null,badge:'novo',icon:'🔌',estoque:10,desc:'Hub USB 3.0 com 4 portas e LED indicador. Transferência de até 5Gbps. Compatível com qualquer dispositivo USB.',specs:[{k:'Portas',v:'4x USB 3.0'},{k:'Velocidade',v:'até 5Gbps'},{k:'Alimentação',v:'USB bus power'},{k:'Cabo',v:'30cm'}]},
+  {id:22,cat:'acessorio',nome:'Cooler para Notebook',spec:'Base refrigerada USB · 2 fans',preco:79.90,precoAntigo:99.90,badge:'novo',icon:'❄️',estoque:7,desc:'Base refrigeradora para notebooks de até 17". Dois fans silenciosos alimentados por USB. Reduz temperatura e prolonga vida útil.',specs:[{k:'Fans',v:'2x 120mm silenciosos'},{k:'Alimentação',v:'USB'},{k:'Compatível com',v:'Notebooks até 17"'},{k:'Ajuste de altura',v:'Sim'}]},
+];
+
+const DESTAQUES=[1,8,13,17,5,20];
+const FAQ=[
+  {q:'Qual o prazo de entrega?',a:'Após confirmação do pagamento, despachamos em até 2 dias úteis. O prazo de entrega via Sedex varia conforme a região: SP capital 1-2 dias, interior SP e Sul 2-4 dias, demais estados 3-7 dias úteis.'},
+  {q:'Os produtos têm garantia?',a:'Sim! Todos os produtos têm garantia mínima de 90 dias. Notebooks e SSDs novos possuem garantia do fabricante. Produtos seminovos têm garantia de 90 dias pela nossa loja.'},
+  {q:'Como funciona a troca ou devolução?',a:'Em caso de defeito, entre em contato pelo WhatsApp em até 7 dias após receber o produto. Custeamos o frete de retorno e enviamos o substituto assim que o produto for recebido e testado.'},
+  {q:'Quais formas de pagamento aceitam?',a:'Aceitamos Pix (aprovação imediata), cartão de crédito em até 12x e boleto bancário (prazo de 2 dias úteis para compensação).'},
+  {q:'Emitem nota fiscal?',a:'Sim! Todos os pedidos acompanham nota fiscal eletrônica (NF-e). O CNPJ é 63.873.115/0001-00 (UpTech Store).'},
+  {q:'Posso rastrear meu pedido?',a:'Sim! Assim que o produto for despachado, enviamos o código de rastreio pelo WhatsApp. Você pode acompanhar em tempo real pelo site dos Correios.'},
+  {q:'Atendem fora de São Paulo?',a:'Sim! Entregamos para todo o Brasil via Sedex. O frete é calculado automaticamente pelo CEP no checkout.'},
 ];
 
 let cart=[],currentCat='todos',searchTerm='',step=1;
 let freteSel=0,freteNome='A calcular',payTab='pix';
-let ufAtual='';
 
 const FRETE={
   'SP':{sedex:18.90,pac:12.50,sp:'1-2 dias úteis',pp:'3-5 dias úteis'},
@@ -516,58 +702,34 @@ const FRETE={
 function getFreteUF(uf){return FRETE[uf.toUpperCase()]||FRETE['SP'];}
 
 function renderFreteOpcoes(uf){
-  ufAtual=uf;
   const t=getFreteUF(uf);
   const box=document.getElementById('freteBox');
-  freteSel=0; freteNome='A calcular'; updateTotals();
+  freteSel=0;freteNome='A calcular';updateTotals();
   box.style.display='block';
-  box.innerHTML=`
-    <div class="frete-result">
-      <div class="frete-result-title">🚚 Opções de frete — ${uf.toUpperCase()}</div>
-      <div class="frete-opt" id="fo-sedex" onclick="selFrete(${t.sedex},'SEDEX',this)">
-        <div class="frete-opt-info"><span class="frete-opt-nome">📦 SEDEX</span><span class="frete-opt-prazo">${t.sp}</span></div>
-        <span class="frete-opt-val">R$ ${t.sedex.toFixed(2).replace('.',',')}</span>
-      </div>
-      <div class="frete-opt" id="fo-pac" onclick="selFrete(${t.pac},'PAC',this)">
-        <div class="frete-opt-info"><span class="frete-opt-nome">📬 PAC</span><span class="frete-opt-prazo">${t.pp}</span></div>
-        <span class="frete-opt-val">R$ ${t.pac.toFixed(2).replace('.',',')}</span>
-      </div>
-    </div>`;
+  box.innerHTML=`<div class="frete-result"><div class="frete-result-title">🚚 Frete para ${uf.toUpperCase()}</div>
+    <div class="frete-opt" id="fo-s" onclick="selFrete(${t.sedex},'SEDEX',this)"><div class="frete-opt-info"><span class="frete-opt-nome">📦 SEDEX</span><span class="frete-opt-prazo">${t.sp}</span></div><span class="frete-opt-val">R$ ${t.sedex.toFixed(2).replace('.',',')}</span></div>
+    <div class="frete-opt" id="fo-p" onclick="selFrete(${t.pac},'PAC',this)"><div class="frete-opt-info"><span class="frete-opt-nome">📬 PAC</span><span class="frete-opt-prazo">${t.pp}</span></div><span class="frete-opt-val">R$ ${t.pac.toFixed(2).replace('.',',')}</span></div>
+  </div>`;
 }
 
 function selFrete(val,nome,el){
   document.querySelectorAll('.frete-opt').forEach(e=>e.classList.remove('sel'));
-  el.classList.add('sel');
-  freteSel=val; freteNome=nome;
-  updateTotals();
+  el.classList.add('sel');freteSel=val;freteNome=nome;updateTotals();
   showToast(`✓ ${nome} — R$ ${val.toFixed(2).replace('.',',')} selecionado`);
 }
 
-// ─── BUSCA CEP com múltiplas APIs ───
 async function buscarCep(){
   const cep=document.getElementById('fCep').value.replace(/\D/g,'');
   if(cep.length!==8){showToast('⚠️ CEP inválido');return;}
-  const status=document.getElementById('cepStatus');
-  status.style.display='block';
-  status.textContent='🔍 Buscando endereço...';
+  const st=document.getElementById('cepStatus');
+  st.style.display='block';st.textContent='🔍 Buscando endereço...';
   document.getElementById('freteBox').style.display='none';
-  freteSel=0; freteNome='A calcular'; updateTotals();
-
+  freteSel=0;freteNome='A calcular';updateTotals();
   const apis=[
-    ()=>fetch(`https://viacep.com.br/ws/${cep}/json/`).then(r=>r.json()).then(d=>{
-      if(d.erro)throw new Error('not found');
-      return{rua:d.logradouro,bairro:d.bairro,cidade:d.localidade,uf:d.uf};
-    }),
-    ()=>fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`).then(r=>r.json()).then(d=>{
-      if(d.message)throw new Error('not found');
-      return{rua:d.street||'',bairro:d.neighborhood||'',cidade:d.city||'',uf:d.state||''};
-    }),
-    ()=>fetch(`https://opencep.com/v1/${cep}`).then(r=>r.json()).then(d=>{
-      if(!d.cep)throw new Error('not found');
-      return{rua:d.logradouro||'',bairro:d.bairro||'',cidade:d.localidade||'',uf:d.uf||''};
-    }),
+    ()=>fetch(`https://viacep.com.br/ws/${cep}/json/`).then(r=>r.json()).then(d=>{if(d.erro)throw 0;return{rua:d.logradouro,bairro:d.bairro,cidade:d.localidade,uf:d.uf};}),
+    ()=>fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`).then(r=>r.json()).then(d=>{if(d.message)throw 0;return{rua:d.street||'',bairro:d.neighborhood||'',cidade:d.city||'',uf:d.state||''};}),
+    ()=>fetch(`https://opencep.com/v1/${cep}`).then(r=>r.json()).then(d=>{if(!d.cep)throw 0;return{rua:d.logradouro||'',bairro:d.bairro||'',cidade:d.localidade||'',uf:d.uf||''};})
   ];
-
   for(const api of apis){
     try{
       const d=await api();
@@ -575,31 +737,16 @@ async function buscarCep(){
         document.getElementById('fRua').value=d.rua||'';
         document.getElementById('fBairro').value=d.bairro||'';
         document.getElementById('fCidade').value=d.cidade&&d.uf?`${d.cidade} / ${d.uf}`:d.cidade||'';
-        ['fRua','fBairro','fCidade'].forEach(id=>{
-          const el=document.getElementById(id);
-          if(el.value) el.classList.add('ok');
-        });
-        status.style.display='none';
+        ['fRua','fBairro','fCidade'].forEach(id=>{if(document.getElementById(id).value)document.getElementById(id).classList.add('ok');});
+        st.style.display='none';
         showToast('✓ Endereço preenchido automaticamente!');
-        renderFreteOpcoes(d.uf);
-        return;
+        renderFreteOpcoes(d.uf);return;
       }
     }catch(e){}
   }
-
-  // Fallback manual
-  status.textContent='⚠️ CEP não encontrado. Preencha manualmente e selecione o estado:';
+  st.textContent='⚠️ CEP não encontrado. Preencha manualmente e selecione o estado:';
   document.getElementById('freteBox').style.display='block';
-  document.getElementById('freteBox').innerHTML=`
-    <div class="frete-result">
-      <div class="frete-result-title">📍 Selecione o estado para calcular o frete</div>
-      <div class="frete-uf-sel">
-        <div class="ff"><select onchange="if(this.value)renderFreteOpcoes(this.value)" style="background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;width:100%;outline:none;">
-          <option value="">Selecione o estado...</option>
-          ${['AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'].map(u=>`<option value="${u}">${u}</option>`).join('')}
-        </select></div>
-      </div>
-    </div>`;
+  document.getElementById('freteBox').innerHTML=`<div class="frete-result"><div class="frete-result-title">Selecione o estado para calcular o frete</div><div class="ff" style="margin-top:8px;"><select onchange="if(this.value)renderFreteOpcoes(this.value)" style="background:rgba(0,30,60,0.8);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:9px 12px;width:100%;outline:none;"><option value="">Selecione...</option>${['AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'].map(u=>`<option value="${u}">${u}</option>`).join('')}</select></div></div>`;
 }
 
 function mCep(el){
@@ -609,54 +756,42 @@ function mCep(el){
   if(v.replace('-','').length===8)buscarCep();
 }
 
-// ─── CARTÃO ───
 function fmtCard(el){
-  let v=el.value.replace(/\D/g,'').slice(0,16);
-  v=v.replace(/(.{4})/g,'$1 ').trim();
-  el.value=v;
+  let v=el.value.replace(/\D/g,'').slice(0,16);v=v.replace(/(.{4})/g,'$1 ').trim();el.value=v;
   document.getElementById('cardNumDisplay').textContent=v||'•••• •••• •••• ••••';
-  const b=v.replace(/ /g,'');
-  let band='💳';
-  if(b.startsWith('4'))band='🔵 Visa';
-  else if(/^5[1-5]/.test(b))band='🟡 MC';
-  else if(b.startsWith('3'))band='🟢 Amex';
-  document.getElementById('cardBand').textContent=band;
-  atualizarParcelas();
+  const b=v.replace(/ /g,'');let band='💳';
+  if(b.startsWith('4'))band='🔵 Visa';else if(/^5[1-5]/.test(b))band='🟡 MC';else if(b.startsWith('3'))band='🟢 Amex';
+  document.getElementById('cardBand').textContent=band;atualizarParcelas();
 }
-function fmtExp(el){
-  let v=el.value.replace(/\D/g,'');
-  if(v.length>2)v=v.slice(0,2)+'/'+v.slice(2,4);
-  el.value=v;
-  document.getElementById('cardExpDisplay').textContent=v||'MM/AA';
-}
+function fmtExp(el){let v=el.value.replace(/\D/g,'');if(v.length>2)v=v.slice(0,2)+'/'+v.slice(2,4);el.value=v;document.getElementById('cardExpDisplay').textContent=v||'MM/AA';}
 function atualizarParcelas(){
-  const total=getTotal();
-  const sel=document.getElementById('ccParc');
-  const parcelas=[];
-  for(let i=1;i<=12;i++){
-    const val=total/i;
-    if(i===1)parcelas.push(`<option value="1">1x de R$ ${total.toFixed(2).replace('.',',')} (sem juros)</option>`);
-    else if(i<=6)parcelas.push(`<option value="${i}">${i}x de R$ ${val.toFixed(2).replace('.',',')} (sem juros)</option>`);
-    else{const vj=total*(1+0.0199*i)/i;parcelas.push(`<option value="${i}">${i}x de R$ ${vj.toFixed(2).replace('.',',')} (com juros)</option>`);}
-  }
-  sel.innerHTML=parcelas.join('');
+  const total=getTotal();const sel=document.getElementById('ccParc');
+  sel.innerHTML=Array.from({length:12},(_,i)=>{const n=i+1;const val=n<=6?total/n:total*(1+0.0199*n)/n;return`<option value="${n}">${n}x de R$ ${val.toFixed(2).replace('.',',')}${n<=6?' (sem juros)':' (com juros)'}</option>`;}).join('');
 }
-
-// ─── PAGAMENTO TABS ───
 function selectPayTab(tab,el){
   payTab=tab;
-  document.querySelectorAll('.pay-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.pay-section').forEach(s=>s.classList.remove('active'));
-  document.getElementById('pay-'+tab).classList.add('active');
+  document.querySelectorAll('.pay-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+  document.querySelectorAll('.pay-section').forEach(s=>s.classList.remove('active'));document.getElementById('pay-'+tab).classList.add('active');
   const nb=document.getElementById('nextBtn');
-  if(tab==='pix') nb.textContent='📲 Confirmar pelo WhatsApp';
-  else if(tab==='credito') nb.textContent='💳 Confirmar pagamento';
-  else nb.textContent='📄 Gerar boleto pelo WhatsApp';
+  nb.textContent=tab==='pix'?'📲 Confirmar pelo WhatsApp':tab==='credito'?'💳 Confirmar pagamento':'📄 Gerar boleto pelo WhatsApp';
   nb.className='checkout-btn green';
 }
 
-// ─── PRODUTOS ───
+function renderDestaques(){
+  const grid=document.getElementById('destaqueGrid');
+  grid.innerHTML=DESTAQUES.map(id=>{
+    const p=PRODUTOS.find(x=>x.id===id);
+    return`<div class="destaque-card" onclick="openModal(${p.id})">
+      <span class="destaque-icon">${p.icon}</span>
+      <div class="destaque-info">
+        <div class="destaque-badge">${p.badge==='oferta'?'OFERTA':'POPULAR'}</div>
+        <div class="destaque-name">${p.nome}</div>
+        <div class="destaque-price">R$ ${p.preco.toFixed(2).replace('.',',')}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
 function renderProducts(){
   const grid=document.getElementById('productsGrid');
   const filtered=PRODUTOS.filter(p=>(currentCat==='todos'||p.cat===currentCat)&&(!searchTerm||p.nome.toLowerCase().includes(searchTerm)||p.spec.toLowerCase().includes(searchTerm)));
@@ -664,18 +799,72 @@ function renderProducts(){
   document.getElementById('sectionCount').textContent=`${filtered.length} produto${filtered.length!==1?'s':''}`;
   if(!filtered.length){grid.innerHTML=`<div class="empty" style="grid-column:1/-1;"><div style="font-size:48px;margin-bottom:12px;">🔍</div><p>Nenhum produto encontrado</p></div>`;return;}
   grid.innerHTML=filtered.map(p=>`
-    <div class="product-card">
-      <div class="product-img"><span>${p.icon}</span><span class="product-badge badge-${p.badge}">${p.badge}</span></div>
+    <div class="product-card" onclick="openModal(${p.id})">
+      <div class="product-img">
+        <span>${p.icon}</span>
+        <span class="product-badge badge-${p.badge}">${p.badge}</span>
+        ${p.estoque<=3?`<span class="stock-badge">Últimas ${p.estoque} un.</span>`:''}
+      </div>
       <div class="product-info">
         <span class="product-cat">${CATS[p.cat]||p.cat}</span>
         <p class="product-name">${p.nome}</p>
         <p class="product-spec">${p.spec}</p>
         <div class="product-footer">
           <div>${p.precoAntigo?`<span class="product-price-old">R$ ${p.precoAntigo.toFixed(2).replace('.',',')}</span>`:''}<span class="product-price">R$ ${p.preco.toFixed(2).replace('.',',')}</span></div>
-          <button class="add-btn" onclick="addToCart(${p.id})">+</button>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})">+</button>
         </div>
       </div>
     </div>`).join('');
+}
+
+function renderFAQ(){
+  document.getElementById('faqList').innerHTML=FAQ.map((f,i)=>`
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(${i},this)"><span>${f.q}</span><span>+</span></div>
+      <div class="faq-a" id="faq${i}">${f.a}</div>
+    </div>`).join('');
+}
+function toggleFaq(i,el){
+  const a=document.getElementById('faq'+i);
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));
+  if(!isOpen){a.classList.add('open');el.classList.add('open');}
+}
+
+function openModal(id){
+  const p=PRODUTOS.find(x=>x.id===id);
+  const box=document.getElementById('modalBox');
+  box.innerHTML=`
+    <div class="modal-header">
+      <div>
+        <div class="modal-cat">${CATS[p.cat]||p.cat}</div>
+        <div class="modal-name">${p.nome}</div>
+      </div>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-img">${p.icon}</div>
+    <div class="modal-body">
+      ${p.precoAntigo?`<div class="modal-price-old">De R$ ${p.precoAntigo.toFixed(2).replace('.',',')}</div>`:''}
+      <div class="modal-price">R$ ${p.preco.toFixed(2).replace('.',',')}</div>
+      ${p.estoque<=3?`<div class="modal-stock">⚠️ Últimas ${p.estoque} unidades disponíveis!</div>`:''}
+      <div class="modal-spec-title">Especificações técnicas</div>
+      <div class="modal-specs">${p.specs.map(s=>`<div class="modal-spec-item"><strong>${s.k}</strong>${s.v}</div>`).join('')}</div>
+      <div class="modal-spec-title">Descrição</div>
+      <div class="modal-desc">${p.desc}</div>
+      <button class="modal-add-btn" onclick="addToCart(${p.id});document.getElementById('modalOverlay').classList.remove('open')">+ Adicionar ao carrinho</button>
+    </div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal(e){if(e.target===document.getElementById('modalOverlay'))document.getElementById('modalOverlay').classList.remove('open');}
+
+function enviarCaptura(){
+  const wpp=document.getElementById('capturaWpp').value.trim();
+  if(!wpp){showToast('⚠️ Informe seu WhatsApp');return;}
+  const msg=`Olá! Quero receber ofertas da UpTech Store no WhatsApp. Meu número: ${wpp}`;
+  window.open(`https://wa.me/5511920919983?text=${encodeURIComponent(msg)}`,'_blank');
+  document.getElementById('capturaWpp').value='';
+  showToast('✓ Redirecionando para o WhatsApp!');
 }
 
 function filterCat(cat,btn){currentCat=cat;searchTerm='';document.getElementById('searchInput').value='';document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderProducts();}
@@ -699,41 +888,22 @@ function goStep(n){
   if(n===1){nb.textContent='Continuar →';nb.className='checkout-btn';}
   else if(n===2){nb.textContent='Ir para Pagamento →';nb.className='checkout-btn';}
   else{nb.textContent='📲 Confirmar pelo WhatsApp';nb.className='checkout-btn green';}
-  const titles=['🛒 Carrinho','📦 Dados de Entrega','💳 Pagamento'];
-  document.getElementById('cartTitle').textContent=titles[n-1];
-  if(n===1)renderStep1();
-  if(n===3)renderStep3();
-  updateTotals();
+  document.getElementById('cartTitle').textContent=['🛒 Carrinho','📦 Dados de Entrega','💳 Pagamento'][n-1];
+  if(n===1)renderStep1();if(n===3)renderStep3();updateTotals();
 }
-
 function nextStep(){
   if(step===1){if(!cart.length){showToast('⚠️ Adicione produtos ao carrinho!');return;}goStep(2);}
   else if(step===2){if(!validateStep2())return;goStep(3);}
   else{enviarPedido();}
 }
 function prevStep(){if(step>1)goStep(step-1);}
-
 function renderStep1(){
   const el=document.getElementById('cartItemsList'),em=document.getElementById('cartEmptyMsg');
   if(!cart.length){el.innerHTML='';em.style.display='block';return;}
   em.style.display='none';
-  el.innerHTML=cart.map(it=>`
-    <div class="cart-item">
-      <div class="cart-item-icon">${it.icon}</div>
-      <div class="cart-item-info">
-        <p class="cart-item-name">${it.nome}</p>
-        <p class="cart-item-price">R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}</p>
-        <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty(${it.id},-1)">−</button>
-          <span class="qty-num">${it.qty}</span>
-          <button class="qty-btn" onclick="changeQty(${it.id},1)">+</button>
-          <button class="remove-btn" onclick="removeFromCart(${it.id})">🗑 remover</button>
-        </div>
-      </div>
-    </div>`).join('');
+  el.innerHTML=cart.map(it=>`<div class="cart-item"><div class="cart-item-icon">${it.icon}</div><div class="cart-item-info"><p class="cart-item-name">${it.nome}</p><p class="cart-item-price">R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}</p><div class="cart-item-controls"><button class="qty-btn" onclick="changeQty(${it.id},-1)">−</button><span class="qty-num">${it.qty}</span><button class="qty-btn" onclick="changeQty(${it.id},1)">+</button><button class="remove-btn" onclick="removeFromCart(${it.id})">🗑 remover</button></div></div></div>`).join('');
   updateTotals();
 }
-
 function validateStep2(){
   if(!document.getElementById('fNome').value.trim()){showToast('⚠️ Informe o nome');return false;}
   if(!document.getElementById('fWpp').value.trim()){showToast('⚠️ Informe o WhatsApp');return false;}
@@ -742,21 +912,14 @@ function validateStep2(){
   if(freteSel===0){showToast('⚠️ Selecione uma opção de frete');return false;}
   return true;
 }
-
 function renderStep3(){
   const sub=getSubtotal(),total=getTotal();
-  document.getElementById('orderSum').innerHTML=`
-    <div class="os-title">Resumo do pedido</div>
-    ${cart.map(it=>`<div class="os-item"><span>${it.nome} (x${it.qty})</span><span>R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}</span></div>`).join('')}
-    <div class="os-item"><span>Frete (${freteNome})</span><span style="color:#00e676;">R$ ${freteSel.toFixed(2).replace('.',',')}</span></div>
-    <div class="os-total"><span>Total</span><span>R$ ${total.toFixed(2).replace('.',',')}</span></div>`;
+  document.getElementById('orderSum').innerHTML=`<div class="os-title">Resumo do pedido</div>${cart.map(it=>`<div class="os-item"><span>${it.nome} (x${it.qty})</span><span>R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}</span></div>`).join('')}<div class="os-item"><span>Frete (${freteNome})</span><span style="color:#00e676;">R$ ${freteSel.toFixed(2).replace('.',',')}</span></div><div class="os-total"><span>Total</span><span>R$ ${total.toFixed(2).replace('.',',')}</span></div>`;
   document.getElementById('pixAmt').textContent=`R$ ${total.toFixed(2).replace('.',',')}`;
-  const qrEl=document.getElementById('qrcode');
-  qrEl.innerHTML='';
+  const qrEl=document.getElementById('qrcode');qrEl.innerHTML='';
   new QRCode(qrEl,{text:'11920919983',width:160,height:160,colorDark:'#000',colorLight:'#fff',correctLevel:QRCode.CorrectLevel.H});
   atualizarParcelas();
 }
-
 function updateTotals(){
   const sub=getSubtotal(),total=getTotal();
   document.getElementById('subtotalVal').textContent=`R$ ${sub.toFixed(2).replace('.',',')}`;
@@ -765,44 +928,28 @@ function updateTotals(){
   else{fv.textContent=`R$ ${freteSel.toFixed(2).replace('.',',')} (${freteNome})`;fv.style.color='#00e676';}
   document.getElementById('totalVal').textContent=`R$ ${total.toFixed(2).replace('.',',')}`;
 }
-
 function enviarPedido(){
-  const nome=document.getElementById('fNome').value.trim();
-  const wpp=document.getElementById('fWpp').value.trim();
-  const cpf=document.getElementById('fCpf').value.trim();
-  const obs=document.getElementById('fObs').value.trim();
+  const nome=document.getElementById('fNome').value.trim(),wpp=document.getElementById('fWpp').value.trim(),cpf=document.getElementById('fCpf').value.trim(),obs=document.getElementById('fObs').value.trim();
   const sub=getSubtotal(),total=getTotal();
-  const cep=document.getElementById('fCep').value.trim();
-  const rua=document.getElementById('fRua').value.trim();
-  const num=document.getElementById('fNum').value.trim();
-  const comp=document.getElementById('fComp').value.trim();
-  const bairro=document.getElementById('fBairro').value.trim();
-  const cidade=document.getElementById('fCidade').value.trim();
-  const formaPgto=payTab==='pix'?'Pix (11920919983)':payTab==='credito'?'Cartão de Crédito':'Boleto Bancário';
-
-  let msg=`🛒 *NOVO PEDIDO — UpTech Store*\n\n`;
-  msg+=`👤 *Cliente:* ${nome}\n📱 *WhatsApp:* ${wpp}\n`;
+  const cep=document.getElementById('fCep').value.trim(),rua=document.getElementById('fRua').value.trim(),num=document.getElementById('fNum').value.trim(),comp=document.getElementById('fComp').value.trim(),bairro=document.getElementById('fBairro').value.trim(),cidade=document.getElementById('fCidade').value.trim();
+  const formaPgto=payTab==='pix'?'Pix (11920919983)':payTab==='credito'?`Cartão de Crédito — ${document.getElementById('ccParc').value}x`:'Boleto Bancário';
+  let msg=`🛒 *NOVO PEDIDO — UpTech Store*\n\n👤 *Cliente:* ${nome}\n📱 *WhatsApp:* ${wpp}\n`;
   if(cpf)msg+=`🪪 *CPF:* ${cpf}\n`;
   msg+=`\n🛍️ *Produtos:*\n`;
   cart.forEach(it=>{msg+=`• ${it.nome} (x${it.qty}) — R$ ${(it.preco*it.qty).toFixed(2).replace('.',',')}\n`;});
-  msg+=`\n💰 *Subtotal:* R$ ${sub.toFixed(2).replace('.',',')}\n`;
-  msg+=`🚚 *Frete (${freteNome}):* R$ ${freteSel.toFixed(2).replace('.',',')}\n`;
-  msg+=`💵 *Total:* R$ ${total.toFixed(2).replace('.',',')}\n`;
+  msg+=`\n💰 *Subtotal:* R$ ${sub.toFixed(2).replace('.',',')}\n🚚 *Frete (${freteNome}):* R$ ${freteSel.toFixed(2).replace('.',',')}\n💵 *Total:* R$ ${total.toFixed(2).replace('.',',')}\n`;
   msg+=`\n📍 *Endereço:* ${rua}${num?', '+num:''}${comp?' - '+comp:''}, ${bairro}, ${cidade} — CEP: ${cep}\n`;
-  msg+=`\n💳 *Forma de pagamento:* ${formaPgto}\n`;
-  if(payTab==='credito'){
-    const parc=document.getElementById('ccParc').value;
-    msg+=`📊 *Parcelamento:* ${parc}x\n`;
-  }
+  msg+=`\n💳 *Pagamento:* ${formaPgto}\n`;
   if(obs)msg+=`\n💬 *Obs:* ${obs}\n`;
   msg+=`\n✅ Aguardo confirmação!`;
   window.open(`https://wa.me/5511920919983?text=${encodeURIComponent(msg)}`,'_blank');
 }
-
 function copiarPix(){navigator.clipboard.writeText('11920919983').then(()=>showToast('✓ Chave Pix copiada!')).catch(()=>showToast('Chave: 11920919983'));}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
 
+renderDestaques();
 renderProducts();
+renderFAQ();
 </script>
 </body>
 </html>
